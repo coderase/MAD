@@ -1,0 +1,15 @@
+{
+    "name": "porpigliamaxime/mad",
+    "authors": [
+        {
+            "name": "PORPIGLIA MAXIME",
+            "email": "maxime.porpiglia@gmail.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Inc\\" : "inc/class/"
+      }
+    },
+    "require": {}
+}
