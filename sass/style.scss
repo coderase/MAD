@@ -1,0 +1,28 @@
+//Primary color
+$color1: #757575;
+$color2: #333333;
+$color3: #222222;
+$color4: #EAEAEA;
+
+//Secondary color
+$color5: #FFA300;
+$color6: #3883DB;
+$color7: #FF4400;
+$color8: #FAA077;
+//$color9: #FFA300;
+
+@import 'mixins';
+
+// Font Playfair
+@include fontface('Playfair', '../fonts/playfair-display/PlayfairDisplay-Regular', 400, normal);
+@include fontface('Playfair', '../fonts/playfair-display/PlayfairDisplay-Italic', 400, italic);
+@include fontface('Playfair', '../fonts/playfair-display/PlayfairDisplay-Bold', 700, normal);
+@include fontface('Playfair', '../fonts/playfair-display/PlayfairDisplay-BoldItalic', 700, italic);
+
+// Font Graphik
+@include fontface('Graphik', '../fonts/graphik-cufonfonts/GraphikLight', 300, normal);
+@include fontface('Graphik', '../fonts/graphik-cufonfonts/GraphikLightItalic', 300, italic);
+@include fontface('Graphik', '../fonts/graphik-cufonfonts/GraphikRegular', 400, normal);
+@include fontface('Graphik', '../fonts/graphik-cufonfonts/GraphikRegularItalic', 400, italic);
+@include fontface('Graphik', '../fonts/graphik-cufonfonts/GraphikBold', 700, normal);
+@include fontface('Graphik', '../fonts/graphik-cufonfonts/GraphikBoldItalic', 700, italic);
