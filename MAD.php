@@ -25,7 +25,60 @@ if(!class_exists('MAD')):
     }
 
     public function register_custom_post_type(){
+      $mad_project_category_labels = array(
+        'name' => _x( 'Categories', 'MAD' ),
+        'singular_name' => _x( 'Category', 'MAD' ),
+        'search_items' =>  __( 'Search Categories' ),
+        'all_items' => __( 'All Categories' ),
+        'parent_item' => __( 'Parent Category' ),
+        'parent_item_colon' => __( 'Parent Category:' ),
+        'edit_item' => __( 'Edit Category' ),
+        'update_item' => __( 'Update Category' ),
+        'add_new_item' => __( 'Add New Category' ),
+        'new_item_name' => __( 'New Category Name' ),
+        'menu_name' => __( 'Categories' ),
+      );
 
+      register_taxonomy('project_category', array('project'), array(
+        'hierarchical' => true,
+        'labels' => $mad_project_category_labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'categorie' ),
+      ));
+
+      $mad_project_label = array(
+        'name'            => 'Projet',
+        'singular_name'   => 'Projet',
+        'menu_name'       => 'Projets',
+        'name_admin_bar'  => 'Projets',
+        'all_items'           => __( 'Tous les Projets' ),
+        'view_item'           => __( 'Voir le Projet' ),
+        'add_new_item'        => __( 'Ajouter un nouveau Projet' ),
+        'add_new'             => __( 'Ajouter' ),
+        'edit_item'           => __( 'Editer le Projet' ),
+        'update_item'         => __( 'Mettre à jour le Projet' ),
+      );
+
+      $mad_project_args = array(
+        'labels'          => $mad_project_label,
+        'public'          => true,
+        'show_ui'         => true,
+        'show_in_menu'    => true,
+        'capability_type' => 'post',
+        'hierachical'     => false,
+        'menu_position'   => 3,
+        'menu_icon'       => 'dashicons-media-interactive',
+        'supports'        => array('title', 'editor', 'excerpt', 'thumbnail'),
+        'taxonomies'      => array('project_category'),
+        'show_in_rest'    => true,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true
+      );
+      register_post_type('project', $mad_project_args);
     }
 
     public static function install(){
