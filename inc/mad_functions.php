@@ -23,3 +23,6 @@ function mad_add_cpt_support() {
 	endif;
 }
 add_action('after_switch_theme', 'mad_add_cpt_support');
+
+//Ajax
+require(PLUGIN_MAD_DIRECTORY.'inc/metas/ajax_requests.php');

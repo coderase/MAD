@@ -48,6 +48,7 @@ if(!class_exists('MAD')):
         'rewrite' => array( 'slug' => 'categorie' ),
       ));
 
+      //Project
       $mad_project_label = array(
         'name'            => 'Projet',
         'singular_name'   => 'Projet',
@@ -79,6 +80,39 @@ if(!class_exists('MAD')):
         'publicly_queryable'  => true
       );
       register_post_type('project', $mad_project_args);
+
+      //Perks
+      $mad_perk_label = array(
+        'name'            => 'Contre-partie',
+        'singular_name'   => 'Contre-partie',
+        'menu_name'       => 'Contre-parties',
+        'name_admin_bar'  => 'Contre-parties',
+        'all_items'           => __( 'Tous les Contre-partie' ),
+        'view_item'           => __( 'Voir la Contre-partie' ),
+        'add_new_item'        => __( 'Ajouter une nouvelle Contre-partie' ),
+        'add_new'             => __( 'Ajouter' ),
+        'edit_item'           => __( 'Editer la Contre-partie' ),
+        'update_item'         => __( 'Mettre à jour la Contre-partie' ),
+      );
+
+      $mad_project_args = array(
+        'labels'          => $mad_perk_label,
+        'public'          => true,
+        'show_ui'         => true,
+        'show_in_menu'    => true,
+        'capability_type' => 'post',
+        'hierachical'     => false,
+        'menu_position'   => 3,
+        'menu_icon'       => 'dashicons-cart',
+        'supports'        => array('title', 'thumbnail'),
+        'taxonomies'      => array(),
+        'show_in_rest'    => true,
+        'can_export'          => false,
+        'has_archive'         => false,
+        'exclude_from_search' => true,
+        'publicly_queryable'  => false
+      );
+      register_post_type('perk', $mad_project_args);
     }
 
     public static function install(){

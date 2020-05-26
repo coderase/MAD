@@ -50,3 +50,44 @@ jQuery(function() {
     regional : 'fr',
   });
 });
+
+function show_metas_project_popup(){
+  jQuery('#metas_project_popup').css('display', 'flex');
+}
+
+function hide_metas_project_popup(){
+  jQuery('#metas_project_popup').hide();
+}
+
+function show_step1(){
+  jQuery('.step2choice').hide();
+  jQuery('#step1').show();
+  jQuery('#step2').hide();
+}
+
+function show_step2(id){
+  jQuery('.step2choice').hide();
+  jQuery('#step2choice'+id).show();
+  jQuery('#step1').hide();
+  jQuery('#step2').show();
+}
+
+function add_contribution(){
+  var title = jQuery('#contribution_title').val();
+  var price =  jQuery('#contribution_price').val();
+  var delivery =  jQuery('#contribution_delivery').val();
+  var description =  jQuery('#contribution_desc').val();
+
+  var parameters = [];
+  parameters.push(title, price, delivery, description);
+
+  jQuery.ajax({
+    url: ajaxurl,
+    type: 'POST',
+    dataType: 'JSON',
+    data: { action: 'add_contribution', parameters: parameters},
+    success: function(res) {
+      alert('added');
+    }
+  });
+}
