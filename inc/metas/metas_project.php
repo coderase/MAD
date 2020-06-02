@@ -15,11 +15,34 @@ function mad_project_date_html(){
   </div><?php
 }
 
+function mad_project_location_html(){
+  global $post; ?>
+
+  <div>
+    Localisation
+  </div><?php
+}
+
 function mad_project_perks_html(){
+  global $wpdb;
+  global $post; ?>
+
+  <div id="mad_project_perks_container">
+    <div id="mad_project_perks_title">
+      <a onclick="" class="button button-primary button-large">Ajouter</a>
+    </div>
+
+    <div>
+      Liste des Contre-parties
+    </div>
+  </div><?php
+}
+
+function mad_project_package_html(){
   global $wpdb;
   global $post;
 
-  $all_perks = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}posts WHERE post_status = 'publish' AND post_type = 'perk'"); ?>
+  $all_package = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}posts WHERE post_status = 'publish' AND post_type = 'perk'"); ?>
 
   <div id="mad_project_perks_container">
     <div id="mad_project_perks_title">
@@ -27,7 +50,7 @@ function mad_project_perks_html(){
     </div>
 
     <div>
-      Liste des contre-parties
+      Liste des Packages
     </div>
   </div>
 
@@ -45,7 +68,7 @@ function mad_project_perks_html(){
 
         <div id="step2choice1" class="step2choice">
           <select>
-            <option value="null">Choisir une contre-partie</option>
+            <option value="null">Choisir un package</option>
 
             <?php
             foreach($all_perks as $perk): ?>
@@ -89,5 +112,13 @@ function mad_project_contribution_html(){
 
   <div>
     <p>Aucune contribution</p>
+  </div><?php
+}
+
+function mad_project_comments_html(){
+  global $post;  ?>
+
+  <div>
+    <p>Aucun commentaires</p>
   </div><?php
 }

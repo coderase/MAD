@@ -81,22 +81,22 @@ if(!class_exists('MAD')):
       );
       register_post_type('project', $mad_project_args);
 
-      //Perks
-      $mad_perk_label = array(
-        'name'            => 'Contre-partie',
-        'singular_name'   => 'Contre-partie',
-        'menu_name'       => 'Contre-parties',
-        'name_admin_bar'  => 'Contre-parties',
-        'all_items'           => __( 'Tous les Contre-partie' ),
-        'view_item'           => __( 'Voir la Contre-partie' ),
-        'add_new_item'        => __( 'Ajouter une nouvelle Contre-partie' ),
+      //Package Marque
+      $mad_package_label = array(
+        'name'            => 'Package Marque',
+        'singular_name'   => 'Package Marque',
+        'menu_name'       => 'Packages Marques',
+        'name_admin_bar'  => 'Packages Marques',
+        'all_items'           => __( 'Tous les Packages Marques' ),
+        'view_item'           => __( 'Voir le Package Marque' ),
+        'add_new_item'        => __( 'Ajouter un nouveau Package Marque' ),
         'add_new'             => __( 'Ajouter' ),
-        'edit_item'           => __( 'Editer la Contre-partie' ),
-        'update_item'         => __( 'Mettre à jour la Contre-partie' ),
+        'edit_item'           => __( 'Editer le Package Marque' ),
+        'update_item'         => __( 'Mettre à jour le Package Marque' ),
       );
 
-      $mad_project_args = array(
-        'labels'          => $mad_perk_label,
+      $mad_package_args = array(
+        'labels'          => $mad_package_label,
         'public'          => true,
         'show_ui'         => true,
         'show_in_menu'    => true,
@@ -112,7 +112,40 @@ if(!class_exists('MAD')):
         'exclude_from_search' => true,
         'publicly_queryable'  => false
       );
-      register_post_type('perk', $mad_project_args);
+      register_post_type('perk', $mad_package_args);
+
+      //Comments
+      $mad_comment_label = array(
+        'name'            => 'Commentaires',
+        'singular_name'   => 'Commentaires',
+        'menu_name'       => 'Commentaires',
+        'name_admin_bar'  => 'Commentaires',
+        'all_items'           => __( 'Tous les Commentaires' ),
+        'view_item'           => __( 'Voir le Commentaire' ),
+        'add_new_item'        => __( 'Ajouter un nouveau Commentaire' ),
+        'add_new'             => __( 'Ajouter' ),
+        'edit_item'           => __( 'Editer le Commentaire' ),
+        'update_item'         => __( 'Mettre à jour le Commentaire' ),
+      );
+
+      $mad_comment_args = array(
+        'labels'          => $mad_comment_label,
+        'public'          => true,
+        'show_ui'         => true,
+        'show_in_menu'    => true,
+        'capability_type' => 'post',
+        'hierachical'     => false,
+        'menu_position'   => 3,
+        'menu_icon'       => 'dashicons-format-chat',
+        'supports'        => array('title', 'editor'),
+        'taxonomies'      => array(),
+        'show_in_rest'    => true,
+        'can_export'          => false,
+        'has_archive'         => false,
+        'exclude_from_search' => true,
+        'publicly_queryable'  => false
+      );
+      register_post_type('comment', $mad_comment_args);
     }
 
     public static function install(){
