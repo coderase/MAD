@@ -24,5 +24,15 @@ function mad_add_cpt_support() {
 }
 add_action('after_switch_theme', 'mad_add_cpt_support');
 
+//Admin menu
+function mad_admin_menu(){
+  add_menu_page('MAD', 'MAD', 'manage_options', 'mad_admin', 'mad_admin_page', 'dashicons-admin-generic', '4');
+}
+add_action('admin_menu', 'mad_admin_menu');
+
+function mad_admin_page(){
+  require(PLUGIN_MAD_DIRECTORY.'inc/admin/settings.php');
+}
+
 //Ajax
 require(PLUGIN_MAD_DIRECTORY.'inc/metas/ajax_requests.php');

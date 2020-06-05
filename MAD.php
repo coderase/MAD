@@ -19,6 +19,11 @@ if(!class_exists('MAD')):
       require(PLUGIN_MAD_DIRECTORY.'vendor/autoload.php');
       require(PLUGIN_MAD_DIRECTORY.'inc/mad_functions.php');
 
+      //shortcodes
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/shortcode_header.php');
+
+      new MADHeader();
+
       add_action('init', array($this, 'register_custom_post_type'));
       register_activation_hook( __FILE__ , array('MAD', 'install'));
       register_uninstall_hook( __FILE__ , array('MAD', 'uninstall'));
