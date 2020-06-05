@@ -6,15 +6,17 @@
   justify-content: space-between;
   align-items: center;
   background: #FFF; }
-  #shortcode_header .col {
-    width: 18%;
+  #shortcode_header .col1, #shortcode_header .col2 {
+    width: 14%;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center; }
-    #shortcode_header .col img {
+    #shortcode_header .col1 img, #shortcode_header .col2 img {
       width: 50px;
       height: 50px; }
+  #shortcode_header .col2 {
+    width: 30%; }
   #shortcode_header .separator {
     width: 0;
     height: 30px;
