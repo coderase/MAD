@@ -26,3 +26,6 @@ $color8: #FAA077;
 @include fontface('Graphik', '../fonts/graphik-cufonfonts/GraphikRegularItalic', 400, italic);
 @include fontface('Graphik', '../fonts/graphik-cufonfonts/GraphikBold', 700, normal);
 @include fontface('Graphik', '../fonts/graphik-cufonfonts/GraphikBoldItalic', 700, italic);
+
+//Shortcodes
+@import 'shortcodes/header/header';

@@ -16,10 +16,19 @@ function mad_project_date_html(){
 }
 
 function mad_project_location_html(){
-  global $post; ?>
+  global $post;
+  $active_countries = get_option('active_countries'); ?>
 
   <div>
-    Localisation
+    <select name="project_localisation" id="project_localisation">
+      <option value="null">Choisir une localisation</option>
+      <?php
+      foreach($active_countries as $country): ?>
+        <option value="<?php echo $country; ?>"><?php echo $country; ?></option><?php
+      endforeach; ?>
+    </select>
+
+    <script>jQuery('#project_localisation option[value="<?php echo get_post_meta($post->ID, 'localisation', true); ?>"]').attr("selected", "selected");</script>
   </div><?php
 }
 
@@ -122,3 +131,58 @@ function mad_project_comments_html(){
     <p>Aucun commentaires</p>
   </div><?php
 }
+
+if(!function_exists('save_mad_project_infos')):
+  function save_mad_project_infos($post_id, $post, $update){
+    update_post_meta($post_id, 'localisation', @$_POST['project_localisation']);
+  }
+endif;
+add_action('save_post', 'save_mad_project_infos', 10, 3);
+
+/*function add_fullinpark_resa_acf_columns ( $columns ) {
+  unset($columns['date']);
+
+  return array_merge ($columns, array(
+   'resa_id' => __ ( 'N° Résa' ),
+   'resa_type' => __ ( 'Activité' ),
+   'resa_date' => __ ( 'Date - Heure' ),
+   'resa_duration' => __ ( 'Durée' ),
+   'resa_jump' => __ ( 'Jump' ),
+   'resa_kids' => __ ( 'Kids' )
+ ));
+}
+add_filter ( 'manage_edit-fip_resa_columns', 'add_fullinpark_resa_acf_columns' );*/
+
+/*function fullinpark_resa_custom_column ($column, $post_id){
+   switch($column):
+     case 'resa_id':
+       echo '#'.$post_id;
+       break;
+     case 'resa_type':
+       if(get_post_meta($post_id, 'resa_activity', true) == "Course"):
+         if(get_post_meta($post_id, 'resa_collective_course', true)):
+           echo $resa_type_label[get_post_meta($post_id, 'resa_activity', true)].' Collectif';
+         else:
+           echo $resa_type_label[get_post_meta($post_id, 'resa_activity', true)].' Privé';
+         endif;
+       else:
+         echo $resa_type_label[get_post_meta($post_id, 'resa_activity', true)];
+       endif;
+       break;
+     case 'resa_date':
+       echo date('d/m/Y', strtotime(get_post_meta($post_id, 'resa_date', true))).' - '.get_post_meta($post_id, 'resa_hour', true);
+       break;
+     case 'resa_duration':
+       echo get_post_meta($post_id, 'resa_duration', true);
+       break;
+     case 'resa_jump':
+       echo get_post_meta($post_id, 'resa_jump', true);
+       break;
+     case 'resa_kids':
+       echo get_post_meta($post_id, 'resa_kids', true);
+       break;
+     default:
+       break;
+   endswitch;
+}
+add_action ('manage_fip_resa_posts_custom_column', 'fullinpark_resa_custom_column', 10, 2);*/

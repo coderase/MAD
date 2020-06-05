@@ -48,5 +48,26 @@
   font-style: italic;
   font-weight: 700;
   src: url("../fonts/graphik-cufonfonts/GraphikBoldItalic.eot?") format("eot"), url("../fonts/graphik-cufonfonts/GraphikBoldItalic.woff2") format("woff2"), url("../fonts/graphik-cufonfonts/GraphikBoldItalic.woff") format("woff"), url("../fonts/graphik-cufonfonts/GraphikBoldItalic.ttf") format("truetype"), url('../fonts/graphik-cufonfonts/GraphikBoldItalic.svg#str-replace("Graphik", " ", "_")') format("svg"); }
+#shortcode_header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #FFF; }
+  #shortcode_header .col {
+    width: 18%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    #shortcode_header .col img {
+      width: 50px;
+      height: 50px; }
+  #shortcode_header .separator {
+    width: 0;
+    height: 30px;
+    border-left: 1px solid #000; }
 
 /*# sourceMappingURL=style.css.map */

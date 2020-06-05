@@ -1,6 +1,7 @@
 <?php
 require(PLUGIN_MAD_DIRECTORY.'inc/custom_post_type_metas.php');
 require(PLUGIN_MAD_DIRECTORY.'inc/admin_includes.php');
+require(PLUGIN_MAD_DIRECTORY.'inc/frontend_includes.php');
 
 if(!function_exists('custom_ajaxurl')):
   function custom_ajaxurl(){ echo '<script type="text/javascript">var ajaxurl = "' . admin_url('admin-ajax.php') . '";</script>'; }
