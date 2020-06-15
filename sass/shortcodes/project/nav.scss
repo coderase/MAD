@@ -1,0 +1,27 @@
+#project_nav{
+  width: 100%;
+  border: 1px solid #CCC;
+
+  ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+
+    li{
+      width: 200px;
+      cursor: pointer;
+      text-align: center;
+
+      &:hover{
+        border-bottom: 2px solid #CCC;
+      }
+
+      a{
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .active{ border-bottom: 2px solid #CCC;  }
+  }
+}

@@ -19,10 +19,28 @@ if(!class_exists('MAD')):
       require(PLUGIN_MAD_DIRECTORY.'vendor/autoload.php');
       require(PLUGIN_MAD_DIRECTORY.'inc/mad_functions.php');
 
+      //class
+      require(PLUGIN_MAD_DIRECTORY.'inc/class/project_manager.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/class/artist_manager.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/class/compete_manager.php');
+
       //shortcodes
       require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/shortcode_header.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/shortcode_project_perks.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/shortcode_project_perk_selector.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/shortcode_project_nav.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/shortcode_project_comment.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/shortcode_project_artist_name.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/shortcode_project_artists.php');
+
 
       new MADHeader();
+      new ProjectPerks();
+      new ProjectPerkSelector();
+      new ProjectNav();
+      new ProjectComment();
+      new ProjectArtistName();
+      new ProjectArtists();
 
       add_action('init', array($this, 'register_custom_post_type'));
       register_activation_hook( __FILE__ , array('MAD', 'install'));
@@ -117,7 +135,7 @@ if(!class_exists('MAD')):
         'exclude_from_search' => true,
         'publicly_queryable'  => false
       );
-      register_post_type('perk', $mad_package_args);
+      //register_post_type('perk', $mad_package_args);
 
       //Comments
       $mad_comment_label = array(
@@ -151,6 +169,72 @@ if(!class_exists('MAD')):
         'publicly_queryable'  => false
       );
       register_post_type('comment', $mad_comment_args);
+
+      //Artist
+      $mad_artist_label = array(
+        'name'            => 'Artistes',
+        'singular_name'   => 'Artistes',
+        'menu_name'       => 'Artistes',
+        'name_admin_bar'  => 'Artistes',
+        'all_items'           => __( 'Tous les Artistes' ),
+        'view_item'           => __( 'Voir l\'Artiste' ),
+        'add_new_item'        => __( 'Ajouter un nouvel Artiste' ),
+        'add_new'             => __( 'Ajouter' ),
+        'edit_item'           => __( 'Editer l\'Artiste' ),
+        'update_item'         => __( 'Mettre à jour l\'Artiste' ),
+      );
+
+      $mad_artist_args = array(
+        'labels'          => $mad_artist_label,
+        'public'          => true,
+        'show_ui'         => true,
+        'show_in_menu'    => true,
+        'capability_type' => 'post',
+        'hierachical'     => false,
+        'menu_position'   => 3,
+        'menu_icon'       => 'dashicons-admin-users',
+        'supports'        => array('title', 'editor', 'thumbnail'),
+        'taxonomies'      => array(),
+        'show_in_rest'    => true,
+        'can_export'          => false,
+        'has_archive'         => false,
+        'exclude_from_search' => true,
+        'publicly_queryable'  => false
+      );
+      register_post_type('artist', $mad_artist_args);
+
+      //Compete
+      $mad_compete_label = array(
+        'name'            => 'Compétitions',
+        'singular_name'   => 'Compétitions',
+        'menu_name'       => 'Compétitions',
+        'name_admin_bar'  => 'Compétitions',
+        'all_items'           => __( 'Tous les Compétitions' ),
+        'view_item'           => __( 'Voir la Compétition' ),
+        'add_new_item'        => __( 'Ajouter une nouvelle Compétition' ),
+        'add_new'             => __( 'Ajouter' ),
+        'edit_item'           => __( 'Editer la Compétition' ),
+        'update_item'         => __( 'Mettre à jour la Compétition' ),
+      );
+
+      $mad_compete_args = array(
+        'labels'          => $mad_compete_label,
+        'public'          => true,
+        'show_ui'         => true,
+        'show_in_menu'    => true,
+        'capability_type' => 'post',
+        'hierachical'     => false,
+        'menu_position'   => 3,
+        'menu_icon'       => 'dashicons-megaphone',
+        'supports'        => array('title', 'editor', 'thumbnail'),
+        'taxonomies'      => array(),
+        'show_in_rest'    => true,
+        'can_export'          => false,
+        'has_archive'         => false,
+        'exclude_from_search' => true,
+        'publicly_queryable'  => false
+      );
+      register_post_type('compete', $mad_compete_args);
     }
 
     public static function install(){

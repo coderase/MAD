@@ -40,7 +40,7 @@ $blue: #3883DB;
   }
 }
 
-#metas_project_popup{
+.metas_project_popup{
   width: 100%;
   height: 100%;
   display: none;
@@ -52,7 +52,7 @@ $blue: #3883DB;
   background: rgba(0,0,0,0.8);
   z-index: 9999999999;
 
-  #x_button{
+  .x_button{
     position: absolute;
     top: 20px;
     right: 20px;
@@ -63,7 +63,7 @@ $blue: #3883DB;
     cursor: pointer;
   }
 
-  #container{
+  .container{
     width: 45%;
     padding: 40px;
     background: #FFF;

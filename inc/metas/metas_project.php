@@ -1,4 +1,23 @@
 <?php
+function mad_project_artist_html(){
+  global $wpdb;
+  global $post;
+
+  $all_artist = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}posts WHERE post_type = 'artist' AND post_status = 'publish'"); ?>
+
+  <div id="mad_project_artist_container">
+    <select id="project_artist" name="project_artist">
+      <option value="null">Choisir un artiste</option>
+
+      <?php
+      foreach($all_artist as $artist): ?>
+        <option value="<?php echo $artist->ID;  ?>"><?php echo $artist->post_title; ?></option><?php
+      endforeach; ?>
+    </select>
+    <script>jQuery('#project_artist option[value="<?php echo get_post_meta($post->ID, 'artist', true); ?>"]').attr("selected", "selected");</script>
+  </div><?php
+}
+
 function mad_project_date_html(){
   global $post; ?>
 
@@ -38,13 +57,54 @@ function mad_project_perks_html(){
 
   <div id="mad_project_perks_container">
     <div id="mad_project_perks_title">
-      <a onclick="" class="button button-primary button-large">Ajouter</a>
+      <a onclick="show_metas_project_popup('#metas_project_perks_popup');" class="button button-primary button-large">Ajouter</a>
     </div>
 
     <div>
       Liste des Contre-parties
+
+
+      <?php
+      $perks = get_post_meta($post->ID, 'perks', true);
+
+      foreach($perks as $perk): ?>
+          <div>
+            <p><a href="<?php echo get_the_permalink($perk['product_id']); ?>"><?php echo get_the_title($perk['product_id']); ?></a></p>
+            <p><?php echo $perk['delivery']; ?></p>
+          </div>
+        <?php
+      endforeach; ?>
     </div>
-  </div><?php
+  </div>
+
+  <div id="metas_project_perks_popup" class="metas_project_popup">
+    <a class="x_button" onclick="hide_metas_project_popup('#metas_project_perks_popup');">x</a>
+
+    <div class="container">
+      <div>
+        <select name="product_id" id="product_id">
+          <option value="null">Choisir un produit</option>
+
+          <?php
+          foreach(ProjectManager::get_all_products() as $product): ?>
+            <option value="<?php echo $product->ID; ?>"><?php echo $product->post_title; ?></option>
+            <?php
+          endforeach; ?>
+        </select>
+
+        <div>
+          <label>Livraison:</label>
+          <textarea id="perk_delivery" name="perk_delivery"></textarea>
+        </div>
+
+        <input type="hidden" id="project_id" value="<?php echo $post->ID; ?>"/>
+        <a class="" onclick="add_perk();">Ajouter</a>
+      </div>
+
+      <div class="loader"></div>
+    </div>
+  </div>
+  <?php
 }
 
 function mad_project_package_html(){
@@ -55,7 +115,7 @@ function mad_project_package_html(){
 
   <div id="mad_project_perks_container">
     <div id="mad_project_perks_title">
-      <a onclick="show_metas_project_popup();" class="button button-primary button-large">Ajouter</a>
+      <a onclick="show_metas_project_popup('#metas_project_package_popup');" class="button button-primary button-large">Ajouter</a>
     </div>
 
     <div>
@@ -63,10 +123,10 @@ function mad_project_package_html(){
     </div>
   </div>
 
-  <div id="metas_project_popup">
-    <a id="x_button" onclick="hide_metas_project_popup();">x</a>
+  <div id="metas_project_package_popup" class="metas_project_popup">
+    <a class="x_button" onclick="hide_metas_project_popup('#metas_project_package_popup');">x</a>
 
-    <div id="container">
+    <div class="container">
       <div id="step1">
         <a class="choice_button" onclick="show_step2(1);">Existante</a>
         <a class="choice_button" onclick="show_step2(2);">Créer</a>
@@ -135,6 +195,7 @@ function mad_project_comments_html(){
 if(!function_exists('save_mad_project_infos')):
   function save_mad_project_infos($post_id, $post, $update){
     update_post_meta($post_id, 'localisation', @$_POST['project_localisation']);
+    update_post_meta($post_id, 'artist', @$_POST['project_artist']);
   }
 endif;
 add_action('save_post', 'save_mad_project_infos', 10, 3);

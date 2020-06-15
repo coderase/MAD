@@ -51,12 +51,12 @@ jQuery(function() {
   });
 });
 
-function show_metas_project_popup(){
-  jQuery('#metas_project_popup').css('display', 'flex');
+function show_metas_project_popup(id){
+  jQuery(id).css('display', 'flex');
 }
 
-function hide_metas_project_popup(){
-  jQuery('#metas_project_popup').hide();
+function hide_metas_project_popup(id){
+  jQuery(id).hide();
 }
 
 function show_step1(){
@@ -72,22 +72,22 @@ function show_step2(id){
   jQuery('#step2').show();
 }
 
-function add_contribution(){
-  var title = jQuery('#contribution_title').val();
-  var price =  jQuery('#contribution_price').val();
-  var delivery =  jQuery('#contribution_delivery').val();
-  var description =  jQuery('#contribution_desc').val();
+function add_perk(){
+  var project_id = jQuery('#project_id').val();
+  var product_id =  jQuery('#product_id').val();
+  var delivery =  jQuery('#perk_delivery').val();
 
   var parameters = [];
-  parameters.push(title, price, delivery, description);
+  parameters.push(project_id, product_id, delivery);
 
   jQuery.ajax({
     url: ajaxurl,
     type: 'POST',
     dataType: 'JSON',
-    data: { action: 'add_contribution', parameters: parameters},
+    data: { action: 'add_perk', parameters: parameters},
     success: function(res) {
       alert('added');
+      jQuery('#metas_project_perks_popup').hide();
     }
   });
 }
