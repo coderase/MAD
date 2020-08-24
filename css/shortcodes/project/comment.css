@@ -1,0 +1,22 @@
+.comment_container {
+  width: 70%;
+  margin-bottom: 2em; }
+  .comment_container .comment_form {
+    display: flex;
+    flex-direction: column; }
+    .comment_container .comment_form textarea {
+      width: 100%;
+      max-width: 500px;
+      min-height: 150px;
+      margin: 1em 0; }
+    .comment_container .comment_form button {
+      width: 300px;
+      background: #000;
+      color: #FFF;
+      border: none; }
+      .comment_container .comment_form button:hover {
+        background: #000;
+        color: #FFF;
+        border: none; }
+
+/*# sourceMappingURL=comment.css.map */

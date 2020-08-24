@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,mBAAW;EACT,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,YAAY;EAC7B,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,OAAO;EAEnB,+BAAW;IACT,KAAK,EAAE,eAAe;IACtB,MAAM,EAAE,KAAK;IACb,OAAO,EAAE,WAAW;IACpB,UAAU,EAAE,IAAI;IAEhB,mCAAG;MACD,KAAK,EAAE,IAAI",
+"sources": ["../../../sass/shortcodes/compete/judges.scss"],
+"names": [],
+"file": "judges.css"
+}

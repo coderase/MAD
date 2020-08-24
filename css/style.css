@@ -48,47 +48,546 @@
   font-style: italic;
   font-weight: 700;
   src: url("../fonts/graphik-cufonfonts/GraphikBoldItalic.eot?") format("eot"), url("../fonts/graphik-cufonfonts/GraphikBoldItalic.woff2") format("woff2"), url("../fonts/graphik-cufonfonts/GraphikBoldItalic.woff") format("woff"), url("../fonts/graphik-cufonfonts/GraphikBoldItalic.ttf") format("truetype"), url('../fonts/graphik-cufonfonts/GraphikBoldItalic.svg#str-replace("Graphik", " ", "_")') format("svg"); }
+.archives_search_container {
+  display: flex;
+  flex-direction: column; }
+  .archives_search_container .archives_search_input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end; }
+    .archives_search_container .archives_search_input input {
+      width: 70%;
+      height: 45px;
+      max-width: 600px;
+      text-align: center;
+      text-decoration: bold;
+      font-size: 20px;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid #000; }
+    .archives_search_container .archives_search_input a {
+      width: 60px;
+      height: 60px;
+      border: none;
+      cursor: pointer; }
+      .archives_search_container .archives_search_input a img {
+        width: 100%; }
+  .archives_search_container .archives_search_filter {
+    width: 100%;
+    margin: 2em 0;
+    display: flex;
+    flex-direction: row; }
+    .archives_search_container .archives_search_filter .custom_select {
+      width: 25%;
+      max-width: 300px;
+      margin-right: 1.5em;
+      border: 1px solid #000;
+      border-radius: 3px;
+      position: relative; }
+      .archives_search_container .archives_search_filter .custom_select a {
+        width: 100%;
+        display: flex;
+        padding: 5px 20px;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        color: #6d6d6d;
+        cursor: pointer; }
+        .archives_search_container .archives_search_filter .custom_select a img {
+          width: 16px;
+          height: 16px;
+          margin: 0.3em 0 0 1em; }
+        .archives_search_container .archives_search_filter .custom_select a p {
+          margin: 0; }
+        .archives_search_container .archives_search_filter .custom_select a.active img {
+          transform: rotate(180deg);
+          transition-duration: 0.6s; }
+      .archives_search_container .archives_search_filter .custom_select .custom_select_items {
+        width: calc(100% + 40px);
+        display: none;
+        position: absolute;
+        top: calc(100% + 0.7em);
+        left: -20px;
+        background: #EEE;
+        color: #6d6d6d;
+        box-shadow: 0px 15px 10px -15px #111;
+        z-index: 9999; }
+        .archives_search_container .archives_search_filter .custom_select .custom_select_items.active {
+          display: block; }
+        .archives_search_container .archives_search_filter .custom_select .custom_select_items ul {
+          list-style: none;
+          padding: 0;
+          margin: 0; }
+          .archives_search_container .archives_search_filter .custom_select .custom_select_items ul li {
+            width: 100%;
+            padding: 0.5em 0;
+            text-align: center;
+            cursor: pointer; }
+            .archives_search_container .archives_search_filter .custom_select .custom_select_items ul li:hover {
+              background: #FFF;
+              font-weight: bold; }
+
 #shortcode_header {
   width: 100%;
+  max-width: 520px;
   height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  float: right;
   align-items: center;
   background: #FFF; }
   #shortcode_header .col1, #shortcode_header .col2 {
-    width: 14%;
     height: 50px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start !important;
     align-items: center; }
+    #shortcode_header .col1 .dashboard_url, #shortcode_header .col2 .dashboard_url {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3px 5px;
+      border: 1px solid #000;
+      color: #000;
+      border-radius: 15px; }
     #shortcode_header .col1 img, #shortcode_header .col2 img {
+      width: 35px; }
+    #shortcode_header .col1 .profil_img, #shortcode_header .col2 .profil_img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 3px solid #CCC; }
+    #shortcode_header .col1 .cart_img, #shortcode_header .col2 .cart_img {
       width: 50px;
       height: 50px; }
-  #shortcode_header .col2 {
-    width: 30%; }
+    #shortcode_header .col1 a, #shortcode_header .col2 a {
+      cursor: pointer; }
+  #shortcode_header #header_notifications_container {
+    width: 100px;
+    position: relative;
+    justify-content: center; }
+    #shortcode_header #header_notifications_container .active {
+      display: flex !important; }
+  #shortcode_header #header_artist_manager_container {
+    width: 125px; }
+    #shortcode_header #header_artist_manager_container a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      #shortcode_header #header_artist_manager_container a img {
+        width: 35px; }
+  #shortcode_header #header_profil_container {
+    width: 65px;
+    position: relative;
+    justify-content: center; }
+    #shortcode_header #header_profil_container .active {
+      display: flex !important; }
+    #shortcode_header #header_profil_container .dropdown {
+      left: -103px !important; }
+  #shortcode_header #become_artist_button {
+    width: 160px; }
+  #shortcode_header #search_button {
+    width: 40px; }
+  #shortcode_header #cart_button {
+    width: 50px; }
+  #shortcode_header #languages_switcher {
+    width: 75px;
+    flex-direction: row;
+    justify-content: space-around; }
+  #shortcode_header .dropdown {
+    width: 275px;
+    min-height: 100px;
+    display: none;
+    position: absolute;
+    top: calc(100% + 20px);
+    left: -85px;
+    z-index: 99; }
+    #shortcode_header .dropdown .content {
+      width: 100%;
+      position: relative;
+      padding: 15px;
+      background: #FFF;
+      border: 2px solid #ccc;
+      border-radius: 5px; }
+      #shortcode_header .dropdown .content .header_profil_infos {
+        display: flex;
+        justify-content: space-between; }
+        #shortcode_header .dropdown .content .header_profil_infos div {
+          width: 70%; }
+          #shortcode_header .dropdown .content .header_profil_infos div:first-child {
+            width: 30%; }
+          #shortcode_header .dropdown .content .header_profil_infos div img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; }
+      #shortcode_header .dropdown .content .header_profil_links {
+        width: calc(100% + 30px);
+        margin-top: 1em;
+        margin-left: -15px;
+        padding-left: 15px;
+        padding-top: 10px;
+        border-top: 1px solid #CCC;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left; }
+      #shortcode_header .dropdown .content .logout_link {
+        width: calc(100% + 30px);
+        margin-top: 1em;
+        margin-left: -15px;
+        padding-left: 15px;
+        padding-top: 10px;
+        display: flex;
+        border-top: 1px solid #CCC; }
+    #shortcode_header .dropdown .content:after, #shortcode_header .dropdown .content:before {
+      bottom: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none; }
+    #shortcode_header .dropdown .content:after {
+      border-color: rgba(255, 255, 255, 0);
+      border-bottom-color: #FFF;
+      border-width: 20px;
+      margin-left: -20px; }
+    #shortcode_header .dropdown .content:before {
+      border-color: rgba(204, 204, 204, 0);
+      border-bottom-color: #ccc;
+      border-width: 23px;
+      margin-left: -23px; }
   #shortcode_header .separator {
     width: 0;
     height: 30px;
     border-left: 1px solid #000; }
 
+.register {
+  display: none; }
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0; }
+
+.register_link {
+  margin: 0;
+  font-size: 13px; }
+  .register_link a {
+    cursor: pointer; }
+
+#loginform {
+  width: 100%; }
+  #loginform .row {
+    width: 100%;
+    margin: .75em auto;
+    display: flex;
+    flex-direction: column; }
+    #loginform .row a {
+      color: #c36 !important;
+      cursor: pointer; }
+      #loginform .row a:hover {
+        color: #c36 !important; }
+  #loginform .extra_options {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    #loginform .extra_options p {
+      width: 48%; }
+    #loginform .extra_options a {
+      color: #c36 !important;
+      cursor: pointer; }
+      #loginform .extra_options a:hover {
+        color: #c36 !important; }
+  #loginform button, #loginform .register_button, #loginform .forgot_button, #loginform .login_button {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em auto;
+    padding: .5rem 1rem;
+    background: #000;
+    color: #FFF;
+    border: none;
+    cursor: pointer; }
+    #loginform button:hover, #loginform .register_button:hover, #loginform .forgot_button:hover, #loginform .login_button:hover {
+      background: #000;
+      color: #FFF;
+      border: none; }
+  #loginform .register_button, #loginform .register, #loginform .forgot_button, #loginform .forgot {
+    display: none; }
+  #loginform .login {
+    display: flex; }
+
+#step2, #step2forgotpassword, #notActivatedText, #passwordNotMatchText, .register_errors {
+  display: none; }
+
+#step2 {
+  text-align: center; }
+
+#notActivatedText, #passwordNotMatchText {
+  color: #EDABAB;
+  text-align: center; }
+
+.rgpd_text {
+  font-size: 13px; }
+
+.register_errors {
+  color: #EDABAB; }
+
+.popup {
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999; }
+  .popup .content {
+    width: 500px;
+    max-height: 90%;
+    padding: 20px 30px;
+    background: #FFF;
+    border-radius: 25px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none; }
+    .popup .content::-webkit-scrollbar {
+      display: none; }
+    .popup .content .popup_link {
+      color: #c36 !important; }
+      .popup .content .popup_link:hover {
+        color: #c36 !important; }
+
+#compete_form {
+  width: 100%;
+  margin-bottom: 2em;
+  padding: 2em 1em;
+  position: relative;
+  background: #FFF;
+  -webkit-box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.35); }
+  #compete_form .title {
+    width: 300px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -20px;
+    left: calc(50% - 150px);
+    background: #000;
+    color: #FFF; }
+  #compete_form .form_content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap; }
+    #compete_form .form_content .half_row {
+      width: 46%;
+      margin: 1em 2%; }
+      #compete_form .form_content .half_row input {
+        width: 100%;
+        background: #FFF;
+        border: none;
+        border-bottom: 1px solid #BBB;
+        box-shadow: none;
+        outline: none; }
+      #compete_form .form_content .half_row .upload-btn-wrapper {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        display: inline-block; }
+      #compete_form .form_content .half_row .btn {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #BBB;
+        color: #BBB;
+        background: #FFF;
+        padding: 0;
+        border-radius: 3px;
+        font-size: 16px; }
+        #compete_form .form_content .half_row .btn .text {
+          width: calc(75% - 10px);
+          padding-left: 10px; }
+        #compete_form .form_content .half_row .btn .selector {
+          width: 40px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #000;
+          color: #FFF; }
+      #compete_form .form_content .half_row .upload-btn-wrapper input[type=file] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0; }
+    #compete_form .form_content .half_plus_row {
+      width: 66%;
+      margin: 1em 2% 2em 2%; }
+      #compete_form .form_content .half_plus_row select {
+        width: 100%;
+        height: 40px;
+        font-size: 13px; }
+    #compete_form .form_content .full_row {
+      width: 96%;
+      margin: 1em 2%; }
+      #compete_form .form_content .full_row input {
+        width: 100%;
+        background: #FFF;
+        border: none;
+        border-bottom: 1px solid #BBB;
+        box-shadow: none;
+        outline: none; }
+      #compete_form .form_content .full_row textarea {
+        width: 100%;
+        min-height: 100px;
+        background: #FFF;
+        border: none;
+        border-bottom: 1px solid #BBB;
+        box-shadow: none;
+        outline: none; }
+    #compete_form .form_content .infos {
+      width: 96%;
+      margin: 0 auto;
+      text-align: center; }
+  #compete_form .button {
+    width: 300px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -20px;
+    left: calc(50% - 150px);
+    background: #000;
+    color: #FFF;
+    cursor: pointer; }
+
+.compete_nav_container {
+  width: 100%;
+  border: 1px solid #CCC;
+  margin-bottom: 2em; }
+  .compete_nav_container ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none; }
+    .compete_nav_container ul li {
+      cursor: pointer;
+      text-align: center;
+      margin: 0 2em; }
+      .compete_nav_container ul li:hover {
+        border-bottom: 2px solid #CCC; }
+      .compete_nav_container ul li a {
+        width: 100%;
+        display: flex;
+        font-size: 19px;
+        text-align: center;
+        padding: .5em 0; }
+    .compete_nav_container ul .active {
+      border-bottom: 2px solid #CCC; }
+
+.compete_texts_section {
+  width: 100%;
+  margin: 1em 0; }
+  .compete_texts_section .title {
+    font-size: 32px;
+    font-weight: bold; }
+
+#judges .all_judges {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: #F4F4F4; }
+  #judges .all_judges .judges_box {
+    width: calc(30% - 3em);
+    margin: 2em 0;
+    padding: .75em 1.5em;
+    background: #FFF; }
+    #judges .all_judges .judges_box img {
+      width: 100%; }
+
+#active_compete_container {
+  width: 100%;
+  display: flex;
+  align-items: center; }
+  #active_compete_container .active_compete_box {
+    width: 30%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 3%; }
+    #active_compete_container .active_compete_box a {
+      width: 100%;
+      height: 100%;
+      cursor: pointer; }
+      #active_compete_container .active_compete_box a img {
+        width: 100%; }
+
+#all_projects {
+  width: 100%; }
+  #all_projects .project_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start; }
+    #all_projects .project_container .col1 {
+      width: 39%; }
+      #all_projects .project_container .col1 img {
+        width: 100%; }
+    #all_projects .project_container .col2 {
+      width: 58%;
+      margin-left: 3%; }
+      #all_projects .project_container .col2 .title {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700; }
+      #all_projects .project_container .col2 .subtitle {
+        margin-top: 0;
+        font-size: 22px; }
+
 #project_nav {
   width: 100%;
-  border: 1px solid #CCC; }
+  border: 1px solid #CCC;
+  margin-bottom: 2em; }
   #project_nav ul {
     display: flex;
     flex-direction: row;
     align-items: center;
     list-style: none; }
     #project_nav ul li {
-      width: 200px;
       cursor: pointer;
-      text-align: center; }
+      text-align: center;
+      margin: 0 2em; }
       #project_nav ul li:hover {
         border-bottom: 2px solid #CCC; }
       #project_nav ul li a {
         width: 100%;
-        text-align: center; }
+        display: flex;
+        font-size: 19px;
+        text-align: center;
+        padding: .5em 0; }
     #project_nav ul .active {
       border-bottom: 2px solid #CCC; }
 
@@ -100,11 +599,1221 @@
   display: flex;
   flex-direction: column; }
   #perks_section #perks_container .perk_box {
+    position: relative;
+    margin: 1em 0;
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 10px;
     cursor: pointer; }
-    #perks_section #perks_container .perk_box:hover {
+    #perks_section #perks_container .perk_box .support_background {
+      display: none;
+      width: 100%;
+      height: 100%;
+      background: #FFA300;
+      opacity: .9;
+      position: absolute;
+      top: 0;
+      left: 0; }
+      #perks_section #perks_container .perk_box .support_background a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #FFF;
+        cursor: pointer; }
+    #perks_section #perks_container .perk_box:hover .support_background {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+
+.perk_selector_container {
+  width: 100%; }
+  .perk_selector_container title {
+    color: #000;
+    font-size: 28px;
+    font-weight: 500; }
+  .perk_selector_container select {
+    width: 100%; }
+  .perk_selector_container a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5em 0;
+    margin-top: 1em;
+    border-radius: 3px;
+    background: #000;
+    color: #FFF !important;
+    border: none;
+    cursor: pointer; }
+    .perk_selector_container a:hover {
+      background: #000;
+      color: #FFF;
+      border: none; }
+
+.support_process_popup {
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999; }
+  .support_process_popup .popup_content {
+    width: 500px;
+    padding: 20px 30px;
+    background: #FFF;
+    border-radius: 25px; }
+
+.artist_box {
+  width: 50%;
+  margin: 1em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .artist_box .title {
+    color: #BBB;
+    text-transform: uppercase;
+    font-size: 19px;
+    font-weight: 500; }
+  .artist_box .project_artist_img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important; }
+  .artist_box .artist_name {
+    color: #000;
+    font-size: 24px;
+    font-weight: 500; }
+
+.artist_name {
+  margin: 0 0 -20px 0;
+  font-size: 32px; }
+
+.comment_container {
+  width: 70%;
+  margin-bottom: 2em; }
+  .comment_container .comment_form {
+    display: flex;
+    flex-direction: column; }
+    .comment_container .comment_form textarea {
+      width: 100%;
+      max-width: 500px;
+      min-height: 150px;
+      margin: 1em 0; }
+    .comment_container .comment_form button {
+      width: 300px;
+      background: #000;
+      color: #FFF;
+      border: none; }
+      .comment_container .comment_form button:hover {
+        background: #000;
+        color: #FFF;
+        border: none; }
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-gap: 10px;
+  grid-auto-rows: minmax(180px, auto);
+  grid-auto-flow: dense;
+  padding: 10px; }
+
+.grid-item {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+  .grid-item a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    cursor: pointer; }
+
+.span-2 {
+  grid-column-end: span 2;
+  grid-row-end: span 2; }
+
+.span-3 {
+  grid-column-end: span 3;
+  grid-row-end: span 4; }
+
+.artist_section {
+  width: 100%;
+  margin: 1em 0; }
+  .artist_section .header_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    .artist_section .header_container .title {
+      width: 75%; }
+    .artist_section .header_container .nav {
+      width: 70px;
+      display: flex; }
+      .artist_section .header_container .nav img {
+        width: 25px;
+        height: 25px; }
+
+.metrics_box {
+  width: 300px;
+  padding: 1em 2em;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #CCC;
+  float: right; }
+  .metrics_box .artist_namebis {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0; }
+  .metrics_box .headline {
+    margin: 0; }
+  .metrics_box .favorites {
+    width: 200px;
+    margin: 1em auto;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px; }
+    .metrics_box .favorites a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer; }
+    .metrics_box .favorites img {
+      width: 18px;
+      height: 18px;
+      margin-right: 10px; }
+  .metrics_box .socials {
+    width: 100%;
+    max-width: 200px;
+    margin: 1em auto;
+    display: flex;
+    justify-content: space-around; }
+    .metrics_box .socials img {
+      width: 30px; }
+
+.shop_section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start; }
+  .shop_section .product_box {
+    width: 20%; }
+    .shop_section .product_box img {
+      width: 100%; }
+
+.project_section {
+  width: 100%; }
+  .project_section .project_box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start; }
+    .project_section .project_box .project_image {
+      width: 40%; }
+    .project_section .project_box .project_desc {
+      width: 55%; }
+      .project_section .project_box .project_desc .title {
+        font-size: 20px;
+        font-weight: bold; }
+
+.artist_infos .artist_name {
+  font-weight: 700px;
+  margin: 0 !important; }
+.artist_infos .share_box {
+  font-weight: bold; }
+  .artist_infos .share_box a {
+    color: #FF4400 !important;
+    cursor: pointer; }
+
+.alike_section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start; }
+  .alike_section .alike_box {
+    width: 28%;
+    margin-right: 4%;
+    padding-top: 28%;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    position: relative; }
+    .alike_section .alike_box a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0; }
+
+.artist_categories {
+  width: 100%;
+  display: flex; }
+  .artist_categories a {
+    margin-right: 10px;
+    padding: 5px 10px;
+    color: #FFF !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 20px;
+    cursor: pointer; }
+    .artist_categories a:hover {
+      color: #FFF !important; }
+  .artist_categories .music {
+    background: #FFA300; }
+  .artist_categories .arts {
+    background: #3883DB; }
+  .artist_categories .design {
+    background: #FF4400; }
+
+#all_product {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap; }
+  #all_product .product_box {
+    width: 23%;
+    margin: 1em 2% 1.5em 0; }
+    #all_product .product_box .thumbnail {
+      width: 100%;
+      padding-top: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center; }
+    #all_product .product_box .title {
+      margin: 1em 0 0 0;
+      color: #000;
+      font-size: 20px; }
+    #all_product .product_box .excerpt {
+      margin: 0;
+      color: #757575;
+      font-size: 13px; }
+    #all_product .product_box .price {
+      margin: 0;
+      color: #000;
+      font-size: 22px;
+      font-weight: bold; }
+
+#product_galery {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start; }
+  #product_galery .col1 {
+    width: 10%; }
+    #product_galery .col1 img {
+      width: 100%; }
+  #product_galery .col2 {
+    width: 87%;
+    margin-left: 3%; }
+    #product_galery .col2 img {
+      width: 100%; }
+
+.product_author {
+  font-size: 24px;
+  margin: 0; }
+
+.product_name {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 .5em 0; }
+
+.product_price {
+  font-size: 28px;
+  font-weight: 500; }
+
+.product_qty {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: bold; }
+  .product_qty label {
+    margin-bottom: 10px; }
+  .product_qty select {
+    width: 200px; }
+
+.add_to_cart_button {
+  width: 350px;
+  height: 40px;
+  margin: 1em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  color: #FFF !important;
+  border-radius: 10px;
+  cursor: pointer; }
+  .add_to_cart_button:active, .add_to_cart_button:hover {
+    background: #000;
+    color: #FFF !important; }
+
+.dashboard_link {
+  width: 40%;
+  max-width: 300px;
+  height: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #BBB;
+  color: #FFF !important;
+  font-weight: 800;
+  font-size: 13px;
+  border-radius: 20px;
+  opacity: .8;
+  cursor: pointer; }
+  .dashboard_link:hover {
+    background: #BBB;
+    color: #FFF !important;
+    opacity: 1; }
+
+.popup {
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999; }
+  .popup .content {
+    width: 500px;
+    max-height: 90%;
+    padding: 20px 30px;
+    background: #FFF;
+    border-radius: 25px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none; }
+    .popup .content::-webkit-scrollbar {
+      display: none; }
+    .popup .content .become_an_artist_button {
+      width: 50%;
+      max-width: 300px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2em auto 1em auto;
+      font-weight: 700;
+      background: #000;
+      color: #FFF;
+      border: 1px solid #000;
+      border-radius: 5px;
+      cursor: pointer; }
+      .popup .content .become_an_artist_button:hover {
+        color: #FFF !important; }
+
+#page_become_artist {
+  width: 100%;
+  margin-top: 2em; }
+  #page_become_artist #page_become_artist_banner {
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ccc;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+    #page_become_artist #page_become_artist_banner div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      #page_become_artist #page_become_artist_banner div img {
+        width: 50px; }
+      #page_become_artist #page_become_artist_banner div a {
+        width: 325px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1em;
+        background: #DDD;
+        color: #FFF !important;
+        border-radius: 5px;
+        text-transform: uppercase;
+        cursor: pointer; }
+  #page_become_artist #become_artist_form {
+    width: 90%;
+    margin: 2em auto; }
+    #page_become_artist #become_artist_form .title {
+      font-size: 24px;
+      font-weight: 700; }
+    #page_become_artist #become_artist_form .note {
+      font-size: 13px;
+      color: #EDABAB;
+      margin: 0; }
+    #page_become_artist #become_artist_form .not_public {
+      font-size: 12px;
+      font-style: italic;
+      color: #FFA300;
+      margin-left: 10px; }
+    #page_become_artist #become_artist_form #become_artist_form_elems, #page_become_artist #become_artist_form #profil_submit_button {
+      width: 100%;
+      margin: 1.5em 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start; }
+      #page_become_artist #become_artist_form #become_artist_form_elems .col, #page_become_artist #become_artist_form #profil_submit_button .col {
+        width: 48%; }
+        #page_become_artist #become_artist_form #become_artist_form_elems .col .terms, #page_become_artist #become_artist_form #profil_submit_button .col .terms {
+          text-align: center; }
+        #page_become_artist #become_artist_form #become_artist_form_elems .col a, #page_become_artist #become_artist_form #profil_submit_button .col a {
+          color: #FFA300; }
+        #page_become_artist #become_artist_form #become_artist_form_elems .col .row, #page_become_artist #become_artist_form #profil_submit_button .col .row {
+          width: 100%;
+          margin: 1em 0;
+          flex-wrap: wrap; }
+          #page_become_artist #become_artist_form #become_artist_form_elems .col .row textarea, #page_become_artist #become_artist_form #profil_submit_button .col .row textarea {
+            min-height: 150px; }
+        #page_become_artist #become_artist_form #become_artist_form_elems .col .categories, #page_become_artist #become_artist_form #profil_submit_button .col .categories {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center; }
+          #page_become_artist #become_artist_form #become_artist_form_elems .col .categories div, #page_become_artist #become_artist_form #profil_submit_button .col .categories div {
+            width: 33%;
+            display: flex;
+            align-items: center; }
+            #page_become_artist #become_artist_form #become_artist_form_elems .col .categories div input[type="checkbox"], #page_become_artist #become_artist_form #profil_submit_button .col .categories div input[type="checkbox"] {
+              margin-right: 10px; }
+        #page_become_artist #become_artist_form #become_artist_form_elems .col #profil_picture_container, #page_become_artist #become_artist_form #profil_submit_button .col #profil_picture_container {
+          width: 100%;
+          min-height: 400px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #ccc;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover; }
+          #page_become_artist #become_artist_form #become_artist_form_elems .col #profil_picture_container div, #page_become_artist #become_artist_form #profil_submit_button .col #profil_picture_container div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; }
+            #page_become_artist #become_artist_form #become_artist_form_elems .col #profil_picture_container div img, #page_become_artist #become_artist_form #profil_submit_button .col #profil_picture_container div img {
+              width: 40px; }
+            #page_become_artist #become_artist_form #become_artist_form_elems .col #profil_picture_container div a, #page_become_artist #become_artist_form #profil_submit_button .col #profil_picture_container div a {
+              width: 200px;
+              height: 35px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-top: 1em;
+              background: #DDD;
+              color: #FFF !important;
+              border-radius: 5px;
+              text-transform: uppercase;
+              cursor: pointer; }
+        #page_become_artist #become_artist_form #become_artist_form_elems .col .submit_button, #page_become_artist #become_artist_form #profil_submit_button .col .submit_button {
+          width: 100%;
+          height: 45px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #FFF;
+          font-size: 18px;
+          border-radius: 5px;
+          text-transform: uppercase;
+          cursor: pointer; }
+        #page_become_artist #become_artist_form #become_artist_form_elems .col .brown, #page_become_artist #become_artist_form #profil_submit_button .col .brown {
+          background: #FAA077; }
+        #page_become_artist #become_artist_form #become_artist_form_elems .col .yellow, #page_become_artist #become_artist_form #profil_submit_button .col .yellow {
+          background: #FFA300; }
+    #page_become_artist #become_artist_form #profil_submit_button {
+      align-items: flex-end; }
+
+#artist_manager_page .artist_banner {
+  width: 100%;
+  position: relative; }
+  #artist_manager_page .artist_banner img {
+    width: 100%; }
+  #artist_manager_page .artist_banner a {
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    background: #FFF;
+    color: #BBB;
+    border-radius: 10px;
+    font-weight: bold;
+    opacity: .8; }
+    #artist_manager_page .artist_banner a:hover {
+      opacity: 1; }
+#artist_manager_page .artist_nav {
+  margin-top: -6px;
+  border: 1px solid #CCC; }
+  #artist_manager_page .artist_nav ul {
+    width: 100%;
+    display: flex;
+    list-style: none; }
+    #artist_manager_page .artist_nav ul li {
+      margin-right: 2em;
+      padding: .5em 0;
+      cursor: pointer; }
+      #artist_manager_page .artist_nav ul li.active, #artist_manager_page .artist_nav ul li:hover {
+        border-bottom: 2px solid #CCC; }
+      #artist_manager_page .artist_nav ul li a {
+        color: #000; }
+        #artist_manager_page .artist_nav ul li a:hover {
+          color: #000; }
+#artist_manager_page #artist_content .content {
+  width: 90%;
+  margin: 2em auto; }
+
+#artist_projects {
+  width: 100%; }
+  #artist_projects .artist_projects_button {
+    display: flex;
+    justify-content: flex-end; }
+    #artist_projects .artist_projects_button a {
+      width: 200px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #F4F4F4;
+      color: #000 !important;
+      border-radius: 10px;
+      font-weight: bold;
+      opacity: 1; }
+      #artist_projects .artist_projects_button a:hover, #artist_projects .artist_projects_button a:active {
+        background: #F4F4F4;
+        color: #000 !important; }
+  #artist_projects .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    #artist_projects .container .col1 {
+      width: 23%; }
+      #artist_projects .container .col1 .title {
+        margin-bottom: 1em; }
+      #artist_projects .container .col1 input {
+        width: 100%; }
+      #artist_projects .container .col1 .filter ul {
+        list-style: none;
+        margin: 1em 0;
+        padding: 0 0 1em 0;
+        border-bottom: 1px solid #CCC; }
+        #artist_projects .container .col1 .filter ul li {
+          padding: .5em 0 .5em 1em;
+          cursor: pointer; }
+          #artist_projects .container .col1 .filter ul li.active, #artist_projects .container .col1 .filter ul li:hover {
+            background: #F4F4F4; }
+      #artist_projects .container .col1 .profil_button {
+        width: 90%;
+        max-width: 300px;
+        height: 35px;
+        margin: 1em auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+        color: #FFF;
+        border-radius: 10px;
+        text-transform: uppercase;
+        cursor: pointer; }
+    #artist_projects .container .col2 {
+      width: 72%;
+      margin-left: 5%; }
+      #artist_projects .container .col2 .title {
+        font-size: 24px;
+        font-weight: 600; }
+      #artist_projects .container .col2 .project_advantages {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        background: #F4F4F4;
+        flex-wrap: wrap; }
+        #artist_projects .container .col2 .project_advantages .project_advantages_box {
+          width: 28%;
+          height: 100%;
+          padding: 20px 10px;
+          margin: 1em 0;
+          background: #FFF; }
+          #artist_projects .container .col2 .project_advantages .project_advantages_box .subtitle {
+            font-size: 18px;
+            text-transform: uppercase;
+            color: #FF4400; }
+
+#create_project {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 2em 0;
+  background: #F4F4F4; }
+  #create_project .main_title {
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 1em 0; }
+  #create_project .create_project_box {
+    width: 86%;
+    background: #FFF;
+    margin: 1em auto;
+    padding: 2%; }
+    #create_project .create_project_box .title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 5px; }
+    #create_project .create_project_box .subtitle {
+      width: 100%;
+      margin-bottom: 1em;
+      font-size: 24px; }
+    #create_project .create_project_box .note {
+      margin: 0; }
+    #create_project .create_project_box .infos {
+      width: 100%;
+      font-size: 14px; }
+    #create_project .create_project_box textarea {
+      min-height: 200px; }
+    #create_project .create_project_box .container {
+      display: flex;
+      margin: 3em 0 2em 0; }
+      #create_project .create_project_box .container .col1 {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+      #create_project .create_project_box .container .col2 {
+        width: 65%;
+        margin-left: 5%;
+        display: flex;
+        align-items: center; }
+      #create_project .create_project_box .container .project_date {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        #create_project .create_project_box .container .project_date input {
+          width: 47%; }
+      #create_project .create_project_box .container .product_to_add_container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; }
+        #create_project .create_project_box .container .product_to_add_container a {
+          width: 200px;
+          height: 40px;
+          margin: 1em 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #FFF !important;
+          background: #000;
+          border-radius: 10px;
+          cursor: pointer; }
+        #create_project .create_project_box .container .product_to_add_container table {
+          width: 100%; }
+      #create_project .create_project_box .container .project_picture {
+        width: 50%;
+        height: 0;
+        padding-top: 50%;
+        position: relative;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        border: 2px solid #CCC; }
+        #create_project .create_project_box .container .project_picture label {
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          top: calc(50% - 25px);
+          left: calc(50% - 25px);
+          cursor: pointer; }
+          #create_project .create_project_box .container .project_picture label img {
+            width: 100%; }
+  #create_project #create_project_buttons {
+    width: 86%;
+    margin: 1em auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    #create_project #create_project_buttons a {
+      width: 200px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFF !important;
+      background: #000;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-left: 1em; }
+    #create_project #create_project_buttons .preview {
+      background: #DDD !important; }
+
+#create_product {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 2em 0;
+  background: #F4F4F4; }
+  #create_product .main_title {
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 1em 0; }
+  #create_product .create_product_box {
+    width: 86%;
+    background: #FFF;
+    margin: 1em auto;
+    padding: 2%; }
+    #create_product .create_product_box .title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 5px; }
+    #create_product .create_product_box .subtitle {
+      width: 100%;
+      margin-bottom: 1em;
+      font-size: 24px; }
+    #create_product .create_product_box .note {
+      margin: 0; }
+    #create_product .create_product_box .infos {
+      width: 100%;
+      font-size: 14px; }
+    #create_product .create_product_box textarea {
+      min-height: 200px; }
+    #create_product .create_product_box .container {
+      display: flex;
+      margin: 3em 0 2em 0; }
+      #create_product .create_product_box .container .col1 {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+      #create_product .create_product_box .container .col2 {
+        width: 65%;
+        margin-left: 5%;
+        display: flex;
+        align-items: center; }
+      #create_product .create_product_box .container .create_product_img {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap; }
+        #create_product .create_product_box .container .create_product_img div {
+          width: 18.5%; }
+          #create_product .create_product_box .container .create_product_img div img {
+            width: 100%; }
+      #create_product .create_product_box .container .product_who_what {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        #create_product .create_product_box .container .product_who_what input {
+          width: 47%; }
+      #create_product .create_product_box .container .product_type_container {
+        display: flex; }
+        #create_product .create_product_box .container .product_type_container .product_type {
+          display: flex; }
+      #create_product .create_product_box .container ul {
+        list-style: none;
+        margin: 0;
+        padding: 0; }
+  #create_product #create_product_buttons {
+    width: 86%;
+    margin: 1em auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    #create_product #create_product_buttons a {
+      width: 200px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFF !important;
+      background: #000;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-left: 1em; }
+    #create_product #create_product_buttons .preview {
+      background: #DDD !important; }
+
+#profil_page {
+  width: 90%;
+  margin: 2em auto;
+  padding: 1em 0; }
+  #profil_page #profil_header {
+    width: 100%;
+    display: flex; }
+    #profil_page #profil_header .col {
+      width: 32%;
+      margin-right: 1%; }
+      #profil_page #profil_header .col #profil_picture {
+        position: relative;
+        width: 300px;
+        padding-top: 300px;
+        background-position: center !important;
+        background-size: cover !important;
+        border-radius: 50%;
+        background-repeat: no-repeat !important; }
+        #profil_page #profil_header .col #profil_picture label {
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          top: calc(50% - 25px);
+          left: calc(50% - 25px);
+          cursor: pointer; }
+          #profil_page #profil_header .col #profil_picture label:hover {
+            width: 60px;
+            height: 60px;
+            top: calc(50% - 30px);
+            left: calc(50% - 30px);
+            transition-duration: .3s; }
+          #profil_page #profil_header .col #profil_picture label img {
+            width: 100%;
+            border-radius: 0 !important; }
+      #profil_page #profil_header .col .title {
+        font-weight: 600; }
+      #profil_page #profil_header .col .profil_folow {
+        display: flex; }
+        #profil_page #profil_header .col .profil_folow p {
+          width: 50%; }
+      #profil_page #profil_header .col p {
+        margin: .5em 0; }
+      #profil_page #profil_header .col .edit_profil_link {
+        width: 200px;
+        height: 30px;
+        margin-top: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #CCC;
+        cursor: pointer; }
+  #profil_page #profil_nav {
+    margin-top: 2em;
+    border: 1px solid #CCC; }
+    #profil_page #profil_nav ul {
+      width: 100%;
+      display: flex;
+      list-style: none; }
+      #profil_page #profil_nav ul li {
+        margin-right: 2em;
+        padding: .5em 0;
+        cursor: pointer; }
+        #profil_page #profil_nav ul li.active, #profil_page #profil_nav ul li:hover {
+          border-bottom: 2px solid #CCC; }
+        #profil_page #profil_nav ul li a {
+          color: #000; }
+          #profil_page #profil_nav ul li a:hover {
+            color: #000; }
+  #profil_page #profil_content {
+    display: flex;
+    margin: 2em 0; }
+    #profil_page #profil_content .col1 {
+      width: 25%; }
+    #profil_page #profil_content .col2 {
+      width: 75%; }
+    #profil_page #profil_content .profil_button {
+      width: 90%;
+      max-width: 300px;
+      height: 35px;
+      margin: 1em auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      color: #FFF;
+      text-transform: uppercase;
+      cursor: pointer; }
+    #profil_page #profil_content #profil_feed {
+      width: 100%; }
+      #profil_page #profil_content #profil_feed .title {
+        margin-bottom: 1em; }
+      #profil_page #profil_content #profil_feed input {
+        width: 100%; }
+      #profil_page #profil_content #profil_feed .filter ul {
+        list-style: none;
+        margin: 1em 0;
+        padding: 0 0 1em 0;
+        border-bottom: 1px solid #CCC; }
+        #profil_page #profil_content #profil_feed .filter ul li {
+          padding: .5em 0 .5em 1em;
+          cursor: pointer; }
+          #profil_page #profil_content #profil_feed .filter ul li.active, #profil_page #profil_content #profil_feed .filter ul li:hover {
+            background: #F4F4F4; }
+  #profil_page .notification {
+    margin: 0 !important;
+    font-size: 13px;
+    color: #FFA300;
+    font-style: italic; }
+  #profil_page .artist_status {
+    margin-bottom: 0 !important; }
+  #profil_page .bold {
+    font-weight: bold; }
+
+#profile_popup #step2Profil, #profile_popup .submit_message {
+  display: none; }
+#profile_popup .row {
+  margin: .5em 0; }
+#profile_popup .modify_profil_button {
+  width: 44%;
+  max-width: 300px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: #FFF;
+  text-transform: uppercase;
+  cursor: pointer; }
+#profile_popup .submit_buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0; }
+  #profile_popup .submit_buttons .switch_button {
+    width: calc(52% - 2px);
+    max-width: 298px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F4F4F4;
+    color: #000;
+    border: 1px solid #000;
+    text-transform: uppercase;
+    cursor: pointer; }
+#profile_popup .title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold; }
+  #profile_popup .title a {
+    color: #EDABAB !important;
+    cursor: pointer; }
+#profile_popup .note {
+  font-size: 13px;
+  color: #EDABAB; }
+
+.activation_page {
+  width: 100%;
+  margin: 4em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .activation_page p {
+    font-size: 18px; }
+  .activation_page a {
+    width: 50%;
+    max-width: 300px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em auto;
+    font-weight: 700;
+    background: #000;
+    color: #FFF !important;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer; }
+
+.forgot_page {
+  width: 100%;
+  margin: 4em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .forgot_page form {
+    width: 400px; }
+    .forgot_page form div {
+      margin: 1em 0; }
+  .forgot_page p {
+    font-size: 18px; }
+    .forgot_page p a, .forgot_page p a:hover {
+      width: auto;
+      max-width: auto;
+      height: auto;
+      display: inline;
+      font-weight: normal;
+      border: 0;
+      background: #FFF;
+      color: #EDABAB !important; }
+  .forgot_page .title {
+    font-weight: 700; }
+  .forgot_page button, .forgot_page a {
+    width: 50%;
+    max-width: 300px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em auto;
+    font-weight: 700;
+    background: #000;
+    color: #FFF !important;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer; }
+    .forgot_page button:hover, .forgot_page button:active, .forgot_page button:visited, .forgot_page button:link, .forgot_page button:focus, .forgot_page a:hover, .forgot_page a:active, .forgot_page a:visited, .forgot_page a:link, .forgot_page a:focus {
+      background: #000;
+      color: #FFF !important; }
+
+#preview_page {
+  width: 100%;
+  margin-bottom: 2em; }
+  #preview_page .banner {
+    width: 100%;
+    margin-bottom: 2em; }
+    #preview_page .banner img {
+      width: 100%; }
+  #preview_page .artist_cats {
+    padding: 2% 2% 0 2%; }
+    #preview_page .artist_cats .cats_button {
+      max-width: 300px;
+      margin-bottom: 1em;
+      margin-right: 10px;
+      display: inline-block;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: #FFF !important;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 5px 15px;
+      border-radius: 20px; }
+      #preview_page .artist_cats .cats_button:hover, #preview_page .artist_cats .cats_button:active {
+        color: #FFF !important; }
+    #preview_page .artist_cats .music {
       background: #FFA300; }
+    #preview_page .artist_cats .arts {
+      background: #3883DB; }
+    #preview_page .artist_cats .design {
+      background: #FF4400; }
+  #preview_page .artist_infos {
+    padding: 0 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; }
+    #preview_page .artist_infos .col1 {
+      width: 66%; }
+      #preview_page .artist_infos .col1 .artist_name {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 0; }
+      #preview_page .artist_infos .col1 .desc {
+        font-size: 20px; }
+      #preview_page .artist_infos .col1 .share_box {
+        font-weight: bold; }
+        #preview_page .artist_infos .col1 .share_box a {
+          color: #FF4400;
+          cursor: pointer; }
+    #preview_page .artist_infos .col2 {
+      width: 30%; }
+      #preview_page .artist_infos .col2 .metrics_box {
+        width: 300px;
+        padding: 1em 2em;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #CCC;
+        float: right; }
+        #preview_page .artist_infos .col2 .metrics_box .artist_namebis {
+          font-size: 18px;
+          font-weight: 700;
+          margin: 0; }
+        #preview_page .artist_infos .col2 .metrics_box .headline {
+          margin: 0; }
+        #preview_page .artist_infos .col2 .metrics_box .favorites {
+          width: 200px;
+          margin: 1em auto;
+          border-top: 1px solid #CCC;
+          border-bottom: 1px solid #CCC;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 5px 20px; }
+          #preview_page .artist_infos .col2 .metrics_box .favorites a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer; }
+          #preview_page .artist_infos .col2 .metrics_box .favorites img {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px; }
+  #preview_page .artist_infos, #preview_page .shop, #preview_page .projects, #preview_page .others {
+    padding: 0 2%; }
+  #preview_page .socials {
+    width: 100%;
+    max-width: 200px;
+    margin: 1em auto;
+    display: flex;
+    justify-content: space-around; }
+    #preview_page .socials img {
+      width: 30px; }
+  #preview_page .alike_section {
+    width: 100%;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start; }
+    #preview_page .alike_section .alike_box {
+      width: 28%;
+      margin-right: 4%;
+      padding-top: 28%;
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      position: relative; }
+      #preview_page .alike_section .alike_box a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0; }
+
+nav li {
+  border-color: #7a7a7a !important;
+  color: #7a7a7a !important; }
+  nav li a:hover, nav li a:active, nav li a:focus {
+    color: #7a7a7a !important; }
+    nav li a:hover:after, nav li a:active:after, nav li a:focus:after {
+      background-color: #7a7a7a !important; }
+  nav li a.elementor-item-active {
+    color: #7a7a7a !important;
+    border-color: #7a7a7a !important; }
+    nav li a.elementor-item-active:after {
+      background-color: #7a7a7a !important; }
 
 /*# sourceMappingURL=style.css.map */

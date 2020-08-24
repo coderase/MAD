@@ -1,0 +1,60 @@
+#artist_manager_page{
+  .artist_banner{
+    width: 100%;
+    position: relative;
+
+    img{  width: 100%;  }
+    a{
+      width: 200px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+      background: #FFF;
+      color: #BBB;
+      border-radius: 10px;
+      font-weight: bold;
+      opacity: .8;
+
+      &:hover{  opacity: 1;  }
+    }
+  }
+
+  .artist_nav{
+    margin-top: -6px;
+    border: 1px solid #CCC;
+
+    ul{
+      width: 100%;
+      display: flex;
+      list-style: none;
+
+      li{
+        margin-right: 2em;
+        padding: .5em 0;
+        cursor: pointer;
+
+        &.active, &:hover{  border-bottom: 2px solid #CCC;  }
+        a{
+          color: #000;
+
+          &:hover{  color: #000;  }
+        }
+      }
+    }
+  }
+
+  #artist_content{
+    .content{
+      width: 90%;
+      margin: 2em auto;
+    }
+  }
+}
+
+@import 'artist_manager/project';
+@import 'artist_manager/create_project';
+@import 'artist_manager/create_product';

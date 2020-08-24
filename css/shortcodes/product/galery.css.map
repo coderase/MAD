@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,eAAe;EACb,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,UAAU;EAEvB,qBAAK;IACH,KAAK,EAAE,GAAG;IAEV,yBAAG;MAAE,KAAK,EAAE,IAAI;EAGlB,qBAAK;IACH,KAAK,EAAE,GAAG;IACV,WAAW,EAAE,EAAE;IAEf,yBAAG;MAAE,KAAK,EAAE,IAAI",
+"sources": ["../../../sass/shortcodes/product/galery.scss"],
+"names": [],
+"file": "galery.css"
+}

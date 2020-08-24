@@ -1,0 +1,47 @@
+#mad_compete_judges_container{
+  #mad_compete_judges_title{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin: 1em 0;
+
+    a{  height: 32px; }
+  }
+
+  .judges_row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.metas_compete_popup{
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 9999999999;
+
+  .x_button{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #FFF;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .container{
+    width: 45%;
+    padding: 40px;
+    background: #FFF;
+  }
+}

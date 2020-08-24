@@ -59,20 +59,9 @@ function hide_metas_project_popup(id){
   jQuery(id).hide();
 }
 
-function show_step1(){
-  jQuery('.step2choice').hide();
-  jQuery('#step1').show();
-  jQuery('#step2').hide();
-}
-
-function show_step2(id){
-  jQuery('.step2choice').hide();
-  jQuery('#step2choice'+id).show();
-  jQuery('#step1').hide();
-  jQuery('#step2').show();
-}
-
 function add_perk(){
+  jQuery('#admin_add_perk').hide();
+
   var project_id = jQuery('#project_id').val();
   var product_id =  jQuery('#product_id').val();
   var delivery =  jQuery('#perk_delivery').val();
@@ -84,10 +73,31 @@ function add_perk(){
     url: ajaxurl,
     type: 'POST',
     dataType: 'JSON',
+    async: false,
+    cache: false,
     data: { action: 'add_perk', parameters: parameters},
     success: function(res) {
-      alert('added');
       jQuery('#metas_project_perks_popup').hide();
+    }
+  });
+}
+
+function delete_a_perk(elem){
+  var project_id = jQuery(elem).attr('data-project');
+  var product_id = jQuery(elem).attr('data-product');
+
+  var parameters = [];
+  parameters.push(project_id, product_id);
+
+  jQuery.ajax({
+    url: ajaxurl,
+    type: 'POST',
+    dataType: 'JSON',
+    async: false,
+    cache: false,
+    data: { action: 'delete_perk', parameters: parameters},
+    success: function(res) {
+      jQuery(elem).parent().parent().hide();
     }
   });
 }

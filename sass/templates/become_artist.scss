@@ -1,0 +1,149 @@
+#page_become_artist{
+  width: 100%;
+  margin-top: 2em;
+
+  #page_become_artist_banner{
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ccc;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      img{ width: 50px;  }
+      a{
+        width: 325px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1em;
+        background: #DDD;
+        color: #FFF !important;
+        border-radius: 5px;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+    }
+  }
+
+  #become_artist_form{
+    width: 90%;
+    margin: 2em auto;
+
+    .title{
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .note{
+      font-size: 13px;
+      color: #EDABAB;
+      margin: 0;
+    }
+
+    .not_public{
+      font-size: 12px;
+      font-style: italic;
+      color: $color5;
+      margin-left: 10px;
+    }
+
+    #become_artist_form_elems, #profil_submit_button{
+      width: 100%;
+      margin: 1.5em 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .col{
+        width: 48%;
+
+        .terms{  text-align: center;  }
+        a{  color: $color5; }
+
+        .row{
+          width: 100%;
+          margin: 1em 0;
+          flex-wrap: wrap;
+
+          textarea{  min-height: 150px;  }
+        }
+
+        .categories{
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          div{
+            width: 33%;
+            display: flex;
+            align-items: center;
+
+            input[type="checkbox"]{  margin-right: 10px;  }
+          }
+        }
+
+        #profil_picture_container{
+          width: 100%;
+          min-height: 400px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #ccc;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+
+          div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            img{ width: 40px;  }
+            a{
+              width: 200px;
+              height: 35px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-top: 1em;
+              background: #DDD;
+              color: #FFF !important;
+              border-radius: 5px;
+              text-transform: uppercase;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .submit_button{
+          width: 100%;
+          height: 45px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #FFF;
+          font-size: 18px;
+          border-radius: 5px;
+          text-transform: uppercase;
+          cursor: pointer;
+        }
+        .brown{ background: $color8;  }
+        .yellow{  background: $color5; }
+      }
+    }
+    #profil_submit_button{ align-items: flex-end;  }
+  }
+}

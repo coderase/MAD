@@ -18,6 +18,11 @@
   margin: 1em 0; }
   #mad_project_perks_container #mad_project_perks_title a {
     height: 32px; }
+#mad_project_perks_container .perk_row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
 
 .metas_project_popup {
   width: 100%;
@@ -43,35 +48,51 @@
     width: 45%;
     padding: 40px;
     background: #FFF; }
-    .metas_project_popup .container #step1 {
-      display: flex;
-      justify-content: space-around; }
-      .metas_project_popup .container #step1 .choice_button {
-        width: 200px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #3883DB;
-        color: #FFF;
-        cursor: pointer; }
-    .metas_project_popup .container #step2 {
-      display: none; }
-      .metas_project_popup .container #step2 .row {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 10px; }
-        .metas_project_popup .container #step2 .row input {
-          width: 65%; }
-        .metas_project_popup .container #step2 .row textarea {
-          width: 65%;
-          min-height: 100px; }
-      .metas_project_popup .container #step2 .return_button {
-        display: block;
-        color: #3883DB;
-        font-weight: bold;
-        cursor: pointer;
-        margin-bottom: 20px; }
+
+#mad_compete_judges_container #mad_compete_judges_title {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 1em 0; }
+  #mad_compete_judges_container #mad_compete_judges_title a {
+    height: 32px; }
+#mad_compete_judges_container .judges_row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.metas_compete_popup {
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999999999; }
+  .metas_compete_popup .x_button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #FFF;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer; }
+  .metas_compete_popup .container {
+    width: 45%;
+    padding: 40px;
+    background: #FFF; }
+
+.candidat_info {
+  display: flex; }
+  .candidat_info .label {
+    width: 40%;
+    font-weight: bold; }
+  .candidat_info .value {
+    width: 60%; }
 
 /*# sourceMappingURL=metas.css.map */

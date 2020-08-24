@@ -1,0 +1,10 @@
+#admin_validation_page {
+  width: 100%;
+  display: flex; }
+  #admin_validation_page .col {
+    width: 50%; }
+    #admin_validation_page .col .title {
+      font-size: 18px;
+      font-weight: bold; }
+
+/*# sourceMappingURL=validation.css.map */

@@ -1,22 +1,137 @@
 #shortcode_header {
   width: 100%;
+  max-width: 520px;
   height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  float: right;
   align-items: center;
   background: #FFF; }
   #shortcode_header .col1, #shortcode_header .col2 {
-    width: 14%;
     height: 50px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start !important;
     align-items: center; }
+    #shortcode_header .col1 .dashboard_url, #shortcode_header .col2 .dashboard_url {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3px 5px;
+      border: 1px solid #000;
+      color: #000;
+      border-radius: 15px; }
     #shortcode_header .col1 img, #shortcode_header .col2 img {
+      width: 35px; }
+    #shortcode_header .col1 .profil_img, #shortcode_header .col2 .profil_img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 3px solid #CCC; }
+    #shortcode_header .col1 .cart_img, #shortcode_header .col2 .cart_img {
       width: 50px;
       height: 50px; }
-  #shortcode_header .col2 {
-    width: 30%; }
+    #shortcode_header .col1 a, #shortcode_header .col2 a {
+      cursor: pointer; }
+  #shortcode_header #header_notifications_container {
+    width: 100px;
+    position: relative;
+    justify-content: center; }
+    #shortcode_header #header_notifications_container .active {
+      display: flex !important; }
+  #shortcode_header #header_artist_manager_container {
+    width: 125px; }
+    #shortcode_header #header_artist_manager_container a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      #shortcode_header #header_artist_manager_container a img {
+        width: 35px; }
+  #shortcode_header #header_profil_container {
+    width: 65px;
+    position: relative;
+    justify-content: center; }
+    #shortcode_header #header_profil_container .active {
+      display: flex !important; }
+    #shortcode_header #header_profil_container .dropdown {
+      left: -103px !important; }
+  #shortcode_header #become_artist_button {
+    width: 160px; }
+  #shortcode_header #search_button {
+    width: 40px; }
+  #shortcode_header #cart_button {
+    width: 50px; }
+  #shortcode_header #languages_switcher {
+    width: 75px;
+    flex-direction: row;
+    justify-content: space-around; }
+  #shortcode_header .dropdown {
+    width: 275px;
+    min-height: 100px;
+    display: none;
+    position: absolute;
+    top: calc(100% + 20px);
+    left: -85px;
+    z-index: 99; }
+    #shortcode_header .dropdown .content {
+      width: 100%;
+      position: relative;
+      padding: 15px;
+      background: #FFF;
+      border: 2px solid #ccc;
+      border-radius: 5px; }
+      #shortcode_header .dropdown .content .header_profil_infos {
+        display: flex;
+        justify-content: space-between; }
+        #shortcode_header .dropdown .content .header_profil_infos div {
+          width: 70%; }
+          #shortcode_header .dropdown .content .header_profil_infos div:first-child {
+            width: 30%; }
+          #shortcode_header .dropdown .content .header_profil_infos div img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; }
+      #shortcode_header .dropdown .content .header_profil_links {
+        width: calc(100% + 30px);
+        margin-top: 1em;
+        margin-left: -15px;
+        padding-left: 15px;
+        padding-top: 10px;
+        border-top: 1px solid #CCC;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left; }
+      #shortcode_header .dropdown .content .logout_link {
+        width: calc(100% + 30px);
+        margin-top: 1em;
+        margin-left: -15px;
+        padding-left: 15px;
+        padding-top: 10px;
+        display: flex;
+        border-top: 1px solid #CCC; }
+    #shortcode_header .dropdown .content:after, #shortcode_header .dropdown .content:before {
+      bottom: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none; }
+    #shortcode_header .dropdown .content:after {
+      border-color: rgba(255, 255, 255, 0);
+      border-bottom-color: #FFF;
+      border-width: 20px;
+      margin-left: -20px; }
+    #shortcode_header .dropdown .content:before {
+      border-color: rgba(204, 204, 204, 0);
+      border-bottom-color: #ccc;
+      border-width: 23px;
+      margin-left: -23px; }
   #shortcode_header .separator {
     width: 0;
     height: 30px;

@@ -1,10 +1,12 @@
 <?php
 /*
-Plugin Name: MAD
-Description: V2 MAD
-Author: Maxime PORPIGLIA
-Version: 1
-*/
+ * Plugin Name: MAD
+ * Description: V2 MAD
+ * Author: Maxime PORPIGLIA
+ * Text Domain: MAD
+ * Domain Path: /languages
+ * Version: 1.2
+ */
 
 if(!defined('ABSPATH')):
   die;
@@ -25,22 +27,96 @@ if(!class_exists('MAD')):
       require(PLUGIN_MAD_DIRECTORY.'inc/class/compete_manager.php');
 
       //shortcodes
-      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/shortcode_header.php');
-      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/shortcode_project_perks.php');
-      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/shortcode_project_perk_selector.php');
-      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/shortcode_project_nav.php');
-      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/shortcode_project_comment.php');
-      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/shortcode_project_artist_name.php');
-      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/shortcode_project_artists.php');
-
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/header/shortcode_header.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/header/shortcode_login.php');
 
       new MADHeader();
+      new MADLogin();
+
+      //Discover
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/discover/shortcode_discover_search.php');
+
+      new DiscoverSearch();
+
+      //Project
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/project/shortcode_home_project.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/project/shortcode_project_perks.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/project/shortcode_project_perk_selector.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/project/shortcode_project_nav.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/project/shortcode_project_comment.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/project/shortcode_project_artist_name.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/project/shortcode_project_artists.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/project/shortcode_project_search.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/project/shortcode_project_grid.php');
+
+      new ProjectHome();
       new ProjectPerks();
       new ProjectPerkSelector();
       new ProjectNav();
       new ProjectComment();
       new ProjectArtistName();
       new ProjectArtists();
+      new ProjectSearch();
+      new ProjectGrid();
+
+      //Artist
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/artist/shortcode_home_artist.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/artist/shortcode_artist_infos.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/artist/shortcode_artist_metrics.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/artist/shortcode_artist_categories.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/artist/shortcode_artist_shop.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/artist/shortcode_artist_project.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/artist/shortcode_artist_videos.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/artist/shortcode_artist_alike.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/artist/shortcode_artist_grid.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/artist/shortcode_artist_search.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/artist/shortcode_artist_banner.php');
+
+
+      new ArtistHome();
+      new ArtistInfos();
+      new ArtistMetrics();
+      new ArtistCategories();
+      new ArtistShop();
+      new ArtistProject();
+      new ArtistVideos();
+      new ArtistAlike();
+      new ArtistGrid();
+      new ArtistSearch();
+      new ArtistBanner();
+
+      //Product
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/product/shortcode_home_products.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/product/shortcode_products.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/product/shortcode_product_banner.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/product/shortcode_product_gallery.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/product/shortcode_product_infos.php');
+
+      new ProductsHome();
+      new Products();
+      new ProductBanner();
+      new ProductGallery();
+      new ProductInfos();
+
+      //Compete
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/compete/shortcode_compete_form.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/compete/shortcode_compete_nav.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/compete/shortcode_compete_texts.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/compete/shortcode_compete_judges.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/compete/shortcode_compete_active.php');
+
+      new MADCompeteForm();
+      new MADCompeteNav();
+      new MADCompeteTexts();
+      new MADCompeteJudges();
+      new MADActiveCompete();
+
+      //Dashboard
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/dashboard/shortcode_dashboard_links.php');
+      require(PLUGIN_MAD_DIRECTORY.'inc/shortcodes/dashboard/shortcode_dashboard_popup.php');
+
+      new DashboardLinks();
+      new DashboardPopup();
 
       add_action('init', array($this, 'register_custom_post_type'));
       register_activation_hook( __FILE__ , array('MAD', 'install'));
@@ -193,13 +269,13 @@ if(!class_exists('MAD')):
         'hierachical'     => false,
         'menu_position'   => 3,
         'menu_icon'       => 'dashicons-admin-users',
-        'supports'        => array('title', 'editor', 'thumbnail'),
-        'taxonomies'      => array(),
+        'supports'        => array('title', 'editor', 'excerpt', 'thumbnail'),
+        'taxonomies'      => array('project_category'),
         'show_in_rest'    => true,
-        'can_export'          => false,
-        'has_archive'         => false,
-        'exclude_from_search' => true,
-        'publicly_queryable'  => false
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true
       );
       register_post_type('artist', $mad_artist_args);
 
@@ -229,20 +305,57 @@ if(!class_exists('MAD')):
         'supports'        => array('title', 'editor', 'thumbnail'),
         'taxonomies'      => array(),
         'show_in_rest'    => true,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true
+      );
+      register_post_type('compete', $mad_compete_args);
+
+      //Candidature
+      $mad_candidat_label = array(
+        'name'            => 'Candidatures',
+        'singular_name'   => 'Candidatures',
+        'menu_name'       => 'Candidatures',
+        'name_admin_bar'  => 'Candidatures',
+        'all_items'           => __( 'Toutes les Candidatures' ),
+        'view_item'           => __( 'Voir la Candidature' ),
+        'add_new_item'        => __( 'Ajouter une nouvelle Candidature' ),
+        'add_new'             => __( 'Ajouter' ),
+        'edit_item'           => __( 'Editer la Candidature' ),
+        'update_item'         => __( 'Mettre à jour la Candidatures' ),
+      );
+
+      $mad_candidat_args = array(
+        'labels'          => $mad_candidat_label,
+        'public'          => true,
+        'show_ui'         => true,
+        'show_in_menu'    => true,
+        'capability_type' => 'post',
+        'hierachical'     => false,
+        'menu_position'   => 3,
+        'menu_icon'       => 'dashicons-admin-users',
+        'supports'        => array('title'),
+        'taxonomies'      => array(),
+        'show_in_rest'    => true,
         'can_export'          => false,
         'has_archive'         => false,
         'exclude_from_search' => true,
         'publicly_queryable'  => false
       );
-      register_post_type('compete', $mad_compete_args);
+      register_post_type('candidat', $mad_candidat_args);
     }
 
     public static function install(){
       global $wpdb;
+
+      $wpdb->query("CREATE TABLE IF NOT EXISTS {$wpdb->prefix}favorites (id INT AUTO_INCREMENT PRIMARY KEY, user_id VARCHAR(255) NOT NULL, project_id VARCHAR(255), artist_id VARCHAR(255));");
     }
 
     public static function uninstall(){
       global $wpdb;
+
+      $wpdb->query("DROP TABLE IF EXISTS {$wpdb->prefix}favorites;");
     }
   }
 endif;

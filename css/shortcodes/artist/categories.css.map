@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,kBAAkB;EAChB,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,IAAI;EAEb,oBAAC;IACC,OAAO,EAAE,QAAQ;IACjB,KAAK,EAAE,IAAI;IACX,WAAW,EAAE,IAAI;IACjB,cAAc,EAAE,SAAS;IACzB,eAAe,EAAE,IAAI;IACrB,aAAa,EAAE,IAAI;IACnB,MAAM,EAAE,OAAO;IAEf,0BAAO;MACL,KAAK,EAAE,eAAe",
+"sources": ["../../../sass/shortcodes/artist/categories.scss"],
+"names": [],
+"file": "categories.css"
+}

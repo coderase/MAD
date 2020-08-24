@@ -1,0 +1,9 @@
+.candidat_info {
+  display: flex; }
+  .candidat_info .label {
+    width: 40%;
+    font-weight: bold; }
+  .candidat_info .value {
+    width: 60%; }
+
+/*# sourceMappingURL=candidat.css.map */

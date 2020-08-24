@@ -1,0 +1,17 @@
+#product_galery {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start; }
+  #product_galery .col1 {
+    width: 10%; }
+    #product_galery .col1 img {
+      width: 100%; }
+  #product_galery .col2 {
+    width: 87%;
+    margin-left: 3%; }
+    #product_galery .col2 img {
+      width: 100%; }
+
+/*# sourceMappingURL=galery.css.map */

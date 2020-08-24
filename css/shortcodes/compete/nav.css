@@ -1,0 +1,25 @@
+.compete_nav_container {
+  width: 100%;
+  border: 1px solid #CCC;
+  margin-bottom: 2em; }
+  .compete_nav_container ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none; }
+    .compete_nav_container ul li {
+      cursor: pointer;
+      text-align: center;
+      margin: 0 2em; }
+      .compete_nav_container ul li:hover {
+        border-bottom: 2px solid #CCC; }
+      .compete_nav_container ul li a {
+        width: 100%;
+        display: flex;
+        font-size: 19px;
+        text-align: center;
+        padding: .5em 0; }
+    .compete_nav_container ul .active {
+      border-bottom: 2px solid #CCC; }
+
+/*# sourceMappingURL=nav.css.map */

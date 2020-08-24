@@ -1,0 +1,22 @@
+.artist_categories{
+  width: 100%;
+  display: flex;
+
+  a{
+    margin-right: 10px;
+    padding: 5px 10px;
+    color: #FFF !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 20px;
+    cursor: pointer;
+
+    &:hover{
+      color: #FFF !important;
+    }
+  }
+  .music{  background: $color5;  }
+  .arts{ background: $color6;  }
+  .design{ background: $color7; }
+}

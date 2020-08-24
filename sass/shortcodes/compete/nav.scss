@@ -1,0 +1,31 @@
+.compete_nav_container{
+  width: 100%;
+  border: 1px solid #CCC;
+  margin-bottom: 2em;
+
+  ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+
+    li{
+      cursor: pointer;
+      text-align: center;
+      margin: 0 2em;
+
+      &:hover{
+        border-bottom: 2px solid #CCC;
+      }
+
+      a{
+        width: 100%;
+        display: flex;
+        font-size: 19px;
+        text-align: center;
+        padding: .5em 0;
+      }
+    }
+    .active{ border-bottom: 2px solid #CCC;  }
+  }
+}

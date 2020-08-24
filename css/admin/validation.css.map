@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,sBAAsB;EACpB,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,IAAI;EAEb,2BAAI;IACF,KAAK,EAAE,GAAG;IAEV,kCAAM;MACJ,SAAS,EAAE,IAAI;MACf,WAAW,EAAE,IAAI",
+"sources": ["../../sass/admin/validation.scss"],
+"names": [],
+"file": "validation.css"
+}

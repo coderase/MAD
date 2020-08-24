@@ -28,7 +28,64 @@ $color8: #FAA077;
 @include fontface('Graphik', '../fonts/graphik-cufonfonts/GraphikBoldItalic', 700, italic);
 
 //Shortcodes
-@import 'shortcodes/header/header';
+@import 'shortcodes/search';
 
+@import 'shortcodes/header/header';
+@import 'shortcodes/header/login';
+
+@import 'shortcodes/compete/form';
+@import 'shortcodes/compete/nav';
+@import 'shortcodes/compete/texts';
+@import 'shortcodes/compete/judges';
+@import 'shortcodes/compete/active_compete';
+
+@import 'shortcodes/project/home_projects';
 @import 'shortcodes/project/nav';
 @import 'shortcodes/project/perks';
+@import 'shortcodes/project/perk_selector';
+@import 'shortcodes/project/artists';
+@import 'shortcodes/project/artist_name';
+@import 'shortcodes/project/comment';
+@import 'shortcodes/project/grid';
+
+@import 'shortcodes/artist/artist_section';
+@import 'shortcodes/artist/categories';
+
+@import 'shortcodes/product/products';
+@import 'shortcodes/product/galery';
+@import 'shortcodes/product/infos';
+
+@import 'shortcodes/dashboard/links';
+@import 'shortcodes/dashboard/popup';
+
+@import 'templates/become_artist';
+@import 'templates/artist_manager';
+@import 'templates/profil';
+@import 'templates/activation';
+@import 'templates/forgot';
+@import 'templates/preview';
+
+nav{
+  li{
+    border-color: #7a7a7a !important;
+    color: #7a7a7a !important;
+
+    a{
+      &:hover, &:active, &:focus{
+        color: #7a7a7a !important;
+
+        &:after{
+          background-color: #7a7a7a !important;
+        }
+      }
+      &.elementor-item-active{
+        color: #7a7a7a !important;
+        border-color: #7a7a7a !important;
+
+        &:after{
+          background-color: #7a7a7a !important;
+        }
+      }
+    }
+  }
+}

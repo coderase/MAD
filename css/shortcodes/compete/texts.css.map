@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,sBAAsB;EACpB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;EAEb,6BAAM;IACJ,SAAS,EAAE,IAAI;IACf,WAAW,EAAE,IAAI",
+"sources": ["../../../sass/shortcodes/compete/texts.scss"],
+"names": [],
+"file": "texts.css"
+}

@@ -1,20 +1,24 @@
 #project_nav {
   width: 100%;
-  border: 1px solid #CCC; }
+  border: 1px solid #CCC;
+  margin-bottom: 2em; }
   #project_nav ul {
     display: flex;
     flex-direction: row;
     align-items: center;
     list-style: none; }
     #project_nav ul li {
-      width: 200px;
       cursor: pointer;
-      text-align: center; }
+      text-align: center;
+      margin: 0 2em; }
       #project_nav ul li:hover {
         border-bottom: 2px solid #CCC; }
       #project_nav ul li a {
         width: 100%;
-        text-align: center; }
+        display: flex;
+        font-size: 19px;
+        text-align: center;
+        padding: .5em 0; }
     #project_nav ul .active {
       border-bottom: 2px solid #CCC; }
 

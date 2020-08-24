@@ -38,6 +38,13 @@ $blue: #3883DB;
 
     a{  height: 32px; }
   }
+
+  .perk_row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .metas_project_popup{
@@ -67,36 +74,5 @@ $blue: #3883DB;
     width: 45%;
     padding: 40px;
     background: #FFF;
-
-    #step1{
-      display: flex;
-      justify-content: space-around;
-
-      .choice_button{  @include button();  }
-    }
-    #step2{
-      display: none;
-
-      .row{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 10px;
-
-        input{ width: 65%;  }
-        textarea{
-          width: 65%;
-          min-height: 100px;
-        }
-      }
-
-      .return_button{
-        display: block;
-        color: $blue;
-        font-weight: bold;
-        cursor: pointer;
-        margin-bottom: 20px;
-      }
-    }
   }
 }

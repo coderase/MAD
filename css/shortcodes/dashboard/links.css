@@ -1,0 +1,20 @@
+.dashboard_link {
+  width: 40%;
+  max-width: 300px;
+  height: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #BBB;
+  color: #FFF !important;
+  font-weight: 800;
+  font-size: 13px;
+  border-radius: 20px;
+  opacity: .8;
+  cursor: pointer; }
+  .dashboard_link:hover {
+    background: #BBB;
+    color: #FFF !important;
+    opacity: 1; }
+
+/*# sourceMappingURL=links.css.map */

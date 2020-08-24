@@ -1,6 +1,12 @@
 <?php
 if(!class_exists('ArtistManager')):
   class ArtistManager{
+    public static function get_all_artists(){
+      global $wpdb;
+
+      return $wpdb->get_results("SELECT * FROM {$wpdb->prefix}posts WHERE post_type = 'artist' AND post_status = 'publish'");
+    }
+
     public static function get_project_by_artist($artist_id){
       global $wpdb;
 

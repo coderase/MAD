@@ -1,0 +1,157 @@
+#profil_page {
+  width: 90%;
+  margin: 2em auto;
+  padding: 1em 0; }
+  #profil_page #profil_header {
+    width: 100%;
+    display: flex; }
+    #profil_page #profil_header .col {
+      width: 32%;
+      margin-right: 1%; }
+      #profil_page #profil_header .col #profil_picture {
+        position: relative;
+        width: 300px;
+        padding-top: 300px;
+        background-position: center !important;
+        background-size: cover !important;
+        border-radius: 50%;
+        background-repeat: no-repeat !important; }
+        #profil_page #profil_header .col #profil_picture label {
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          top: calc(50% - 25px);
+          left: calc(50% - 25px);
+          cursor: pointer; }
+          #profil_page #profil_header .col #profil_picture label:hover {
+            width: 60px;
+            height: 60px;
+            top: calc(50% - 30px);
+            left: calc(50% - 30px);
+            transition-duration: .3s; }
+          #profil_page #profil_header .col #profil_picture label img {
+            width: 100%;
+            border-radius: 0 !important; }
+      #profil_page #profil_header .col .title {
+        font-weight: 600; }
+      #profil_page #profil_header .col .profil_folow {
+        display: flex; }
+        #profil_page #profil_header .col .profil_folow p {
+          width: 50%; }
+      #profil_page #profil_header .col p {
+        margin: .5em 0; }
+      #profil_page #profil_header .col .edit_profil_link {
+        width: 200px;
+        height: 30px;
+        margin-top: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #CCC;
+        cursor: pointer; }
+  #profil_page #profil_nav {
+    margin-top: 2em;
+    border: 1px solid #CCC; }
+    #profil_page #profil_nav ul {
+      width: 100%;
+      display: flex;
+      list-style: none; }
+      #profil_page #profil_nav ul li {
+        margin-right: 2em;
+        padding: .5em 0;
+        cursor: pointer; }
+        #profil_page #profil_nav ul li.active, #profil_page #profil_nav ul li:hover {
+          border-bottom: 2px solid #CCC; }
+        #profil_page #profil_nav ul li a {
+          color: #000; }
+          #profil_page #profil_nav ul li a:hover {
+            color: #000; }
+  #profil_page #profil_content {
+    display: flex;
+    margin: 2em 0; }
+    #profil_page #profil_content .col1 {
+      width: 25%; }
+    #profil_page #profil_content .col2 {
+      width: 75%; }
+    #profil_page #profil_content .profil_button {
+      width: 90%;
+      max-width: 300px;
+      height: 35px;
+      margin: 1em auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      color: #FFF;
+      text-transform: uppercase;
+      cursor: pointer; }
+    #profil_page #profil_content #profil_feed {
+      width: 100%; }
+      #profil_page #profil_content #profil_feed .title {
+        margin-bottom: 1em; }
+      #profil_page #profil_content #profil_feed input {
+        width: 100%; }
+      #profil_page #profil_content #profil_feed .filter ul {
+        list-style: none;
+        margin: 1em 0;
+        padding: 0 0 1em 0;
+        border-bottom: 1px solid #CCC; }
+        #profil_page #profil_content #profil_feed .filter ul li {
+          padding: .5em 0 .5em 1em;
+          cursor: pointer; }
+          #profil_page #profil_content #profil_feed .filter ul li.active, #profil_page #profil_content #profil_feed .filter ul li:hover {
+            background: #F4F4F4; }
+  #profil_page .notification {
+    margin: 0 !important;
+    font-size: 13px;
+    color: #FFA300;
+    font-style: italic; }
+  #profil_page .artist_status {
+    margin-bottom: 0 !important; }
+  #profil_page .bold {
+    font-weight: bold; }
+
+#profile_popup #step2Profil, #profile_popup .submit_message {
+  display: none; }
+#profile_popup .row {
+  margin: .5em 0; }
+#profile_popup .modify_profil_button {
+  width: 44%;
+  max-width: 300px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: #FFF;
+  text-transform: uppercase;
+  cursor: pointer; }
+#profile_popup .submit_buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0; }
+  #profile_popup .submit_buttons .switch_button {
+    width: calc(52% - 2px);
+    max-width: 298px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F4F4F4;
+    color: #000;
+    border: 1px solid #000;
+    text-transform: uppercase;
+    cursor: pointer; }
+#profile_popup .title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold; }
+  #profile_popup .title a {
+    color: #EDABAB !important;
+    cursor: pointer; }
+#profile_popup .note {
+  font-size: 13px;
+  color: #EDABAB; }
+
+/*# sourceMappingURL=profil.css.map */

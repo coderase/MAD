@@ -1,0 +1,19 @@
+#judges{
+  .all_judges{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background: #F4F4F4;
+
+    .judges_box{
+      width: calc(30% - 3em);
+      margin: 2em 0;
+      padding: .75em 1.5em;
+      background: #FFF;
+
+      img{
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+#compete_form{
+  width: 100%;
+  margin-bottom: 2em;
+  padding: 2em 1em;
+  position: relative;
+  background: #FFF;
+  -webkit-box-shadow: 0px 2px 3px 3px rgba(0,0,0,0.35);
+  -moz-box-shadow: 0px 2px 3px 3px rgba(0,0,0,0.35);
+  box-shadow: 0px 2px 3px 3px rgba(0,0,0,0.35);
+
+  .title{
+    width: 300px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -20px;
+    left: calc(50% - 150px);
+    background: #000;
+    color: #FFF;
+  }
+
+  .form_content{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .half_row{
+      width: 46%;
+      margin: 1em 2%;
+
+      input{
+        width: 100%;
+        background: #FFF;
+        border: none;
+        border-bottom: 1px solid #BBB;
+        box-shadow: none;
+        outline: none;
+      }
+
+      .upload-btn-wrapper {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+      }
+
+      .btn {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #BBB;
+        color: #BBB;
+        background: #FFF;
+        padding: 0;
+        border-radius: 3px;
+        font-size: 16px;
+
+        .text{
+          width: calc(75% - 10px);
+          padding-left: 10px;
+        }
+
+        .selector{
+          width: 40px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #000;
+          color: #FFF;
+        }
+      }
+
+      .upload-btn-wrapper input[type=file] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+      }
+    }
+
+    .half_plus_row{
+      width: 66%;
+      margin: 1em 2% 2em 2%;
+
+      select{
+        width: 100%;
+        height: 40px;
+        font-size: 13px;
+      }
+    }
+
+    .full_row{
+      width: 96%;
+      margin: 1em 2%;
+
+      input{
+        width: 100%;
+        background: #FFF;
+        border: none;
+        border-bottom: 1px solid #BBB;
+        box-shadow: none;
+        outline: none;
+      }
+
+      textarea{
+        width: 100%;
+        min-height: 100px;
+        background: #FFF;
+        border: none;
+        border-bottom: 1px solid #BBB;
+        box-shadow: none;
+        outline: none;
+      }
+    }
+
+    .infos{
+      width: 96%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  .button{
+    width: 300px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -20px;
+    left: calc(50% - 150px);
+    background: #000;
+    color: #FFF;
+    cursor: pointer;
+  }
+}

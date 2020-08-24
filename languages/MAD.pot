@@ -1,0 +1,257 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: MAD\n"
+"POT-Creation-Date: 2020-08-05 13:30+0200\n"
+"PO-Revision-Date: 2020-08-05 13:30+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: MAD.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+
+#: MAD.php:122
+msgctxt "MAD"
+msgid "Categories"
+msgstr ""
+
+#: MAD.php:123
+msgctxt "MAD"
+msgid "Category"
+msgstr ""
+
+#: MAD.php:124
+msgid "Search Categories"
+msgstr ""
+
+#: MAD.php:125
+msgid "All Categories"
+msgstr ""
+
+#: MAD.php:126
+msgid "Parent Category"
+msgstr ""
+
+#: MAD.php:127
+msgid "Parent Category:"
+msgstr ""
+
+#: MAD.php:128
+msgid "Edit Category"
+msgstr ""
+
+#: MAD.php:129
+msgid "Update Category"
+msgstr ""
+
+#: MAD.php:130
+msgid "Add New Category"
+msgstr ""
+
+#: MAD.php:131
+msgid "New Category Name"
+msgstr ""
+
+#: MAD.php:132
+msgid "Categories"
+msgstr ""
+
+#: MAD.php:150
+msgid "Tous les Projets"
+msgstr ""
+
+#: MAD.php:151
+msgid "Voir le Projet"
+msgstr ""
+
+#: MAD.php:152
+msgid "Ajouter un nouveau Projet"
+msgstr ""
+
+#: MAD.php:153 MAD.php:186 MAD.php:219 MAD.php:252 MAD.php:285 MAD.php:318
+msgid "Ajouter"
+msgstr ""
+
+#: MAD.php:154
+msgid "Editer le Projet"
+msgstr ""
+
+#: MAD.php:155
+msgid "Mettre à jour le Projet"
+msgstr ""
+
+#: MAD.php:183
+msgid "Tous les Packages Marques"
+msgstr ""
+
+#: MAD.php:184
+msgid "Voir le Package Marque"
+msgstr ""
+
+#: MAD.php:185
+msgid "Ajouter un nouveau Package Marque"
+msgstr ""
+
+#: MAD.php:187
+msgid "Editer le Package Marque"
+msgstr ""
+
+#: MAD.php:188
+msgid "Mettre à jour le Package Marque"
+msgstr ""
+
+#: MAD.php:216
+msgid "Tous les Commentaires"
+msgstr ""
+
+#: MAD.php:217
+msgid "Voir le Commentaire"
+msgstr ""
+
+#: MAD.php:218
+msgid "Ajouter un nouveau Commentaire"
+msgstr ""
+
+#: MAD.php:220
+msgid "Editer le Commentaire"
+msgstr ""
+
+#: MAD.php:221
+msgid "Mettre à jour le Commentaire"
+msgstr ""
+
+#: MAD.php:249
+msgid "Tous les Artistes"
+msgstr ""
+
+#: MAD.php:250
+msgid "Voir l'Artiste"
+msgstr ""
+
+#: MAD.php:251
+msgid "Ajouter un nouvel Artiste"
+msgstr ""
+
+#: MAD.php:253
+msgid "Editer l'Artiste"
+msgstr ""
+
+#: MAD.php:254
+msgid "Mettre à jour l'Artiste"
+msgstr ""
+
+#: MAD.php:282
+msgid "Tous les Compétitions"
+msgstr ""
+
+#: MAD.php:283
+msgid "Voir la Compétition"
+msgstr ""
+
+#: MAD.php:284
+msgid "Ajouter une nouvelle Compétition"
+msgstr ""
+
+#: MAD.php:286
+msgid "Editer la Compétition"
+msgstr ""
+
+#: MAD.php:287
+msgid "Mettre à jour la Compétition"
+msgstr ""
+
+#: MAD.php:315
+msgid "Toutes les Candidatures"
+msgstr ""
+
+#: MAD.php:316
+msgid "Voir la Candidature"
+msgstr ""
+
+#: MAD.php:317
+msgid "Ajouter une nouvelle Candidature"
+msgstr ""
+
+#: MAD.php:319
+msgid "Editer la Candidature"
+msgstr ""
+
+#: MAD.php:320
+msgid "Mettre à jour la Candidatures"
+msgstr ""
+
+#: inc/mad_functions.php:119
+msgid "Activation"
+msgstr ""
+
+#: inc/mad_functions.php:120
+msgid "Become Artist"
+msgstr ""
+
+#: inc/mad_functions.php:121
+msgid "Forgot Password"
+msgstr ""
+
+#: inc/mad_functions.php:122
+msgid "Profil"
+msgstr ""
+
+#: inc/mad_functions.php:123
+msgid "Artist Manager"
+msgstr ""
+
+#: inc/mad_functions.php:124
+msgid "Preview"
+msgstr ""
+
+#: inc/shortcodes/project/templates/comment.php:31
+msgid "My Comment"
+msgstr ""
+
+#: inc/shortcodes/project/templates/nav.php:3
+msgid "Campaign"
+msgstr ""
+
+#: inc/shortcodes/project/templates/nav.php:4
+msgid "Comment"
+msgstr ""
+
+#: inc/shortcodes/project/templates/perk_selector.php:7
+msgid "Choose an item"
+msgstr ""
+
+#: inc/shortcodes/project/templates/perk_selector.php:24
+msgid "Add to cart"
+msgstr ""
+
+#: templates/template-profil.php:41
+msgid "Joined"
+msgstr ""
+
+#: templates/template-profil.php:42
+msgid "Level"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "MAD"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "V2 MAD"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Maxime PORPIGLIA"
+msgstr ""

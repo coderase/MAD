@@ -57,20 +57,20 @@ function mad_project_perks_html(){
 
   <div id="mad_project_perks_container">
     <div id="mad_project_perks_title">
-      <a onclick="show_metas_project_popup('#metas_project_perks_popup');" class="button button-primary button-large">Ajouter</a>
+      <a onclick="show_metas_project_popup('#metas_project_perks_popup');" class="button button-primary button-large" id="admin_add_perk">Ajouter</a>
     </div>
 
     <div>
       Liste des Contre-parties
 
-
       <?php
       $perks = get_post_meta($post->ID, 'perks', true);
 
       foreach($perks as $perk): ?>
-          <div>
+          <div class="perk_row">
             <p><a href="<?php echo get_the_permalink($perk['product_id']); ?>"><?php echo get_the_title($perk['product_id']); ?></a></p>
             <p><?php echo $perk['delivery']; ?></p>
+            <p><a onclick="delete_a_perk(this);" data-project="<?php echo $post->ID; ?>" data-product="<?php echo $perk['product_id']; ?>">supprimer</a></p>
           </div>
         <?php
       endforeach; ?>

@@ -1,0 +1,57 @@
+.perk_selector_container{
+  width: 100%;
+
+  title{
+    color: #000;
+    font-size: 28px;
+    font-weight: 500;
+  }
+
+  select{
+    width: 100%;
+  }
+
+  a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5em 0;
+    margin-top: 1em;
+    border-radius: 3px;
+    background: #000;
+    color: #FFF !important;
+    border: none;
+    cursor: pointer;
+
+    &:hover{
+      background: #000;
+      color: #FFF;
+      border: none;
+    }
+  }
+}
+
+.support_process_popup{
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,.3);
+  z-index: 999;
+
+  .popup_content{
+    width: 500px;
+    padding: 20px 30px;
+    background: #FFF;
+    border-radius: 25px;
+
+    .rgpd_text{
+
+    }
+  }
+}

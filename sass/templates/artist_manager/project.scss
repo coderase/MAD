@@ -1,0 +1,103 @@
+#artist_projects{
+  width: 100%;
+
+  .artist_projects_button{
+    display: flex;
+    justify-content: flex-end;
+
+    a{
+      width: 200px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #F4F4F4;
+      color: #000 !important;
+      border-radius: 10px;
+      font-weight: bold;
+      opacity: 1;
+
+      &:hover, &:active{
+        background: #F4F4F4;
+        color: #000 !important;
+      }
+    }
+  }
+
+  .container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .col1{
+      width: 23%;
+
+      .title{  margin-bottom: 1em;  }
+      input{  width: 100%;   }
+      .filter{
+        ul{
+          list-style: none;
+          margin: 1em 0;
+          padding: 0 0 1em 0;
+          border-bottom: 1px solid #CCC;
+
+          li{
+            padding: .5em 0 .5em 1em;
+            cursor: pointer;
+
+            &.active, &:hover{  background: #F4F4F4;  }
+          }
+        }
+      }
+
+      .profil_button{
+        width: 90%;
+        max-width: 300px;
+        height: 35px;
+        margin: 1em auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+        color: #FFF;
+        border-radius: 10px;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+    }
+
+    .col2{
+      width: 72%;
+      margin-left: 5%;
+
+      .title{
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      .project_advantages{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        background: #F4F4F4;
+        flex-wrap: wrap;
+
+        .project_advantages_box{
+          width: 28%;
+          height: 100%;
+          padding: 20px 10px;
+          margin: 1em 0;
+          background: #FFF;
+
+          .subtitle{
+            font-size: 18px;
+            text-transform: uppercase;
+            color: $color7;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.candidat_info{
+  display: flex;
+
+  .label{
+    width: 40%;
+    font-weight: bold;
+  }
+
+  .value{
+    width: 60%;
+  }
+}

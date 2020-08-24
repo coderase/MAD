@@ -1,0 +1,30 @@
+.artist_box{
+  width: 50%;
+  margin: 1em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title{
+    color: #BBB;
+    text-transform: uppercase;
+    font-size: 19px;
+    font-weight: 500;
+  }
+
+  .project_artist_img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+  }
+
+  .artist_name{
+    color: #000;
+    font-size: 24px;
+    font-weight: 500;
+  }
+}

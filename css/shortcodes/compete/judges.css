@@ -1,0 +1,14 @@
+#judges .all_judges {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: #F4F4F4; }
+  #judges .all_judges .judges_box {
+    width: calc(30% - 3em);
+    margin: 2em 0;
+    padding: .75em 1.5em;
+    background: #FFF; }
+    #judges .all_judges .judges_box img {
+      width: 100%; }
+
+/*# sourceMappingURL=judges.css.map */
